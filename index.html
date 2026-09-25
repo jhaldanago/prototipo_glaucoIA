@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlaucoIA - Diagnóstico Asistido por IA</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+    <div id="app" class="glaucoia-app">
+        <div class="language-switcher" id="languageSwitcher">
+            <button class="lang-btn active" data-lang="es" onclick="switchLanguage('es')">ES</button>
+            <button class="lang-btn" data-lang="en" onclick="switchLanguage('en')">EN</button>
+        </div>
+
+        <main class="main-content" id="mainContent"></main>
+
+        <!-- Auth Modal -->
+        <div class="auth-modal" id="authModal">
+            <div class="auth-modal-content">
+                <div class="auth-modal-header">
+                    <h3 id="authModalTitle">Acceso</h3>
+                    <button class="auth-modal-close" onclick="closeAuthModal()"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="auth-modal-body">
+                    <div id="authPatientInfo" class="alert alert-info" style="display:none; margin-bottom:16px;">
+                        <i class="fas fa-info-circle"></i>
+                        <span data-i18n="auth.patientInfo">Su cuenta debe ser creada por su médico tratante.</span>
+                    </div>
+                    <div id="authDoctorInfo" class="alert alert-info" style="display:none; margin-bottom:16px;">
+                        <i class="fas fa-info-circle"></i>
+                        <span data-i18n="auth.doctorInfo">Los médicos son registrados por el administrador del sistema.</span>
+                    </div>
+
+                    <div id="authLoginForm">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> <span data-i18n="auth.user">Usuario / DNI</span></label>
+                            <input type="text" class="form-control" id="authUser" placeholder="Ingresa tu DNI" value="42156783" />
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> <span data-i18n="auth.password">Contraseña / Código</span></label>
+                            <input type="password" class="form-control" id="authPassword" placeholder="Ingresa tu contraseña" value="123456" />
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="handleAuth()"><i class="fas fa-sign-in-alt"></i> <span data-i18n="auth.login">Ingresar</span></button>
+                        <div id="doctorRegisterToggle" style="display:none; margin-top:16px;">
+                            <div class="auth-divider" data-i18n="auth.or">o</div>
+                            <button class="btn btn-outline-primary btn-block" onclick="showDoctorRegisterForm()">
+                                <i class="fas fa-user-plus"></i> <span data-i18n="auth.registerDoctor">Registrar nuevo médico</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="authRegisterForm" style="display:none;">
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> <span data-i18n="auth.names">Nombres</span></label>
+                            <input type="text" class="form-control" id="regName" placeholder="Nombres" />
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-user"></i> <span data-i18n="auth.lastNames">Apellidos</span></label>
+                            <input type="text" class="form-control" id="regLastName" placeholder="Apellidos" />
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-id-card"></i> <span data-i18n="auth.dni">DNI</span></label>
+                            <input type="text" class="form-control" id="regDni" placeholder="DNI" />
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-id-badge"></i> <span data-i18n="auth.cmp">CMP</span></label>
+                            <input type="text" class="form-control" id="regCmp" placeholder="CMP" />
+                        </div>
+                        <div class="form-group">
+                            <label><i class="fas fa-lock"></i> <span data-i18n="auth.passwordCreate">Contraseña</span></label>
+                            <input type="password" class="form-control" id="regPassword" placeholder="Crea una contraseña" />
+                        </div>
+                        <button class="btn btn-primary btn-block" onclick="handleDoctorRegister()"><i class="fas fa-user-plus"></i> <span data-i18n="auth.registerBtn">Registrarme</span></button>
+                        <div class="auth-divider" data-i18n="auth.or">o</div>
+                        <button class="btn btn-outline-primary btn-block" onclick="showLoginForm()"><i class="fas fa-arrow-left"></i> <span data-i18n="auth.backToLogin">Volver al inicio de sesión</span></button>
+                    </div>
+                </div>
+                <div class="auth-modal-footer">
+                    <span id="authModalType">Paciente</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alert Modal -->
+        <div class="alert-modal" id="alertModal">
+            <div class="alert-modal-content">
+                <div class="alert-modal-icon" id="alertModalIcon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                <h3 id="alertModalTitle">Información</h3>
+                <p id="alertModalMessage">Mensaje de la alerta</p>
+                <div class="alert-modal-actions" id="alertModalActions">
+                    <button class="btn btn-primary" onclick="closeAlertModal()">Aceptar</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <div class="footer-content">
+                <span data-i18n="footer.app">GlaucoIA · Diagnóstico Asistido por IA</span>
+                <span data-i18n="footer.disclaimer">Herramienta de apoyo al diagnóstico · No reemplaza al especialista</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="data/db.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
