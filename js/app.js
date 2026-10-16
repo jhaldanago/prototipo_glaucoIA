@@ -2,9 +2,6 @@
 // GlaucoIA - Lógica principal
 // ============================================================
 
-// ============================================================
-// Translations
-// ============================================================
 const TRANSLATIONS = {
     es: {
         'app.title': 'GlaucoIA - Diagnóstico Asistido por IA',
@@ -15,7 +12,6 @@ const TRANSLATIONS = {
         'auth.password': 'Contraseña / Código',
         'auth.login': 'Ingresar',
         'auth.or': 'o',
-        'auth.register': '¿No tienes cuenta?',
         'auth.names': 'Nombres',
         'auth.lastNames': 'Apellidos',
         'auth.dni': 'DNI',
@@ -28,7 +24,6 @@ const TRANSLATIONS = {
         'auth.patientInfo': 'Su cuenta debe ser creada por su médico tratante. Si ya fue registrado, ingrese con su DNI y contraseña.',
         'auth.doctorInfo': 'Puede ingresar con su cuenta o registrar una nueva cuenta médica.',
         'auth.registerDoctor': 'Registrar nuevo médico',
-        'auth.contactSupport': 'Contactar soporte',
 
         'home.badge': 'IA aplicada a oftalmología',
         'home.title': 'Apoyo al diagnóstico preliminar de glaucoma',
@@ -62,7 +57,6 @@ const TRANSLATIONS = {
         'patient.nav.appointments': 'Mis citas',
         'patient.nav.report': 'Mi reporte',
         'patient.nav.help': 'Ayuda',
-        'patient.dashboard.title': 'Mi salud visual',
         'patient.dashboard.lastAnalysis': 'Último análisis',
         'patient.dashboard.probability': 'Probabilidad de glaucoma',
         'patient.dashboard.nextAppointment': 'Próxima cita',
@@ -72,15 +66,15 @@ const TRANSLATIONS = {
         'patient.dashboard.myReport': 'Mi reporte',
         'patient.dashboard.noAnalysis': 'Aún no tiene análisis registrados',
         'patient.upload.title': 'Subir imagen de fondo de ojo',
-        'patient.upload.info': 'Simula la carga de imágenes de fondo de ojo. Haz clic en cada ojo para cargar la imagen.',
+        'patient.upload.info': 'Carga de imágenes de fondo de ojo. Haz clic en cada ojo para cargar la imagen.',
         'patient.upload.rightEye': 'Ojo Derecho (OD)',
         'patient.upload.leftEye': 'Ojo Izquierdo (OI)',
-        'patient.upload.clickToLoad': 'Haz clic para simular carga',
+        'patient.upload.clickToLoad': 'Haz clic para subir la imagen',
         'patient.upload.pending': 'Pendiente',
         'patient.upload.loaded': 'Cargada',
         'patient.upload.success': 'Imágenes cargadas correctamente',
         'patient.upload.analyzing': 'La IA está analizando tus imágenes. Recibirás un resultado preliminar.',
-        'patient.upload.analyzeBtn': 'Analizar imágenes (simulación)',
+        'patient.upload.analyzeBtn': 'Analizar imágenes',
         'patient.result.title': 'Mi resultado',
         'patient.result.analysisResult': 'Resultado del análisis',
         'patient.result.probability': 'Probabilidad',
@@ -149,10 +143,11 @@ const TRANSLATIONS = {
         'doctor.dashboard.action': 'Acción',
         'doctor.dashboard.view': 'Ver',
         'doctor.dashboard.edit': 'Editar',
+        'doctor.dashboard.status': 'Estado',
         'doctor.newPatient.title': 'Registrar nuevo paciente',
         'doctor.newPatient.personalData': 'Datos personales',
         'doctor.newPatient.names': 'Nombres',
-        'doctor.newPatient.lastNames': 'Apellidos',
+        'doctor.newPatient.lastNames': 'Apellidos (dos apellidos obligatorios)',
         'doctor.newPatient.dni': 'DNI',
         'doctor.newPatient.birthDate': 'Fecha de nacimiento',
         'doctor.newPatient.password': 'Contraseña de acceso',
@@ -160,17 +155,20 @@ const TRANSLATIONS = {
         'doctor.newPatient.pioOi': 'PIO OI (mmHg)',
         'doctor.newPatient.cancel': 'Cancelar',
         'doctor.newPatient.save': 'Guardar paciente',
-        'doctor.newPatient.help': 'Registre al paciente con sus datos y una contraseña de acceso. El paciente usará su DNI y esta contraseña para ingresar al sistema.',
+        'doctor.newPatient.help': 'Registre al paciente con sus datos y una contraseña de acceso. Los dos apellidos son obligatorios.',
         'doctor.editPatient.title': 'Editar paciente',
         'doctor.editPatient.save': 'Guardar cambios',
         'doctor.registeredPatients.title': 'Pacientes registrados',
         'doctor.registeredPatients.search': 'Buscar paciente...',
         'doctor.registeredPatients.noPatients': 'No hay pacientes registrados',
+        'doctor.registeredPatients.showing': 'Mostrando',
+        'doctor.registeredPatients.of': 'de',
+        'doctor.registeredPatients.patients': 'pacientes',
+        'doctor.registeredPatients.header': 'Paciente (Apellidos / Nombres)',
         'doctor.newAnalysis.title': 'Análisis con IA',
         'doctor.newAnalysis.patient': 'Paciente',
         'doctor.newAnalysis.searchPatient': 'Buscar paciente por nombre o DNI...',
         'doctor.newAnalysis.noResults': 'No se encontraron pacientes',
-        'doctor.newAnalysis.noPatients': 'No hay pacientes registrados. Registre uno primero en "Nuevo paciente".',
         'doctor.newAnalysis.step1': 'Datos',
         'doctor.newAnalysis.step2': 'Imágenes',
         'doctor.newAnalysis.step3': 'Análisis',
@@ -178,10 +176,10 @@ const TRANSLATIONS = {
         'doctor.newAnalysis.step5': 'Mapa IA',
         'doctor.newAnalysis.next': 'Siguiente',
         'doctor.newAnalysis.back': 'Atrás',
+        'doctor.newAnalysis.backToImages': 'Volver a imágenes',
         'doctor.newAnalysis.startAnalysis': 'Iniciar análisis',
         'doctor.newAnalysis.analyzing': 'Analizando imágenes',
         'doctor.newAnalysis.processing': 'La IA está procesando las imágenes de fondo de ojo...',
-        'doctor.newAnalysis.viewResults': 'Ver resultados',
         'doctor.newAnalysis.diagnosisResult': 'Resultado del diagnóstico',
         'doctor.newAnalysis.probabilityEstimated': 'Probabilidad estimada',
         'doctor.newAnalysis.cdRatio': 'C/D Ratio',
@@ -190,7 +188,7 @@ const TRANSLATIONS = {
         'doctor.newAnalysis.aiConfidence': 'Confianza IA',
         'doctor.newAnalysis.clinicalInterpretation': 'Interpretación clínica',
         'doctor.newAnalysis.viewAIMap': 'Ver mapa IA',
-        'doctor.newAnalysis.saveAndReport': 'Guardar y generar reporte',
+        'doctor.newAnalysis.generateReport': 'Generar reporte',
         'doctor.history.title': 'Historial de diagnósticos',
         'doctor.history.search': 'Buscar...',
         'doctor.history.all': 'Todos',
@@ -198,39 +196,54 @@ const TRANSLATIONS = {
         'doctor.history.mediumRisk': 'Riesgo medio',
         'doctor.history.lowRisk': 'Riesgo bajo',
         'doctor.history.noRecords': 'No hay análisis registrados',
+        'doctor.history.noFilterResults': 'No hay análisis que coincidan con el filtro',
         'doctor.help.title': 'Centro de ayuda',
         'doctor.help.contact': 'Contacto técnico',
 
-        'alert.info': 'Información',
-        'alert.success': 'Éxito',
-        'alert.warning': 'Advertencia',
-        'alert.danger': 'Error',
-        'alert.confirm': 'Confirmación',
-        'alert.accept': 'Aceptar',
-        'alert.cancel': 'Cancelar',
-        'alert.yes': 'Sí',
-        'alert.no': 'No',
+        'status.active': 'Activo',
+        'status.inactive': 'Baja',
+        'status.title': 'Estado del paciente',
+        'status.help': 'Seleccione el nuevo estado. La baja es lógica, no elimina el registro.',
+
+        'toast.info': 'Información',
+        'toast.success': 'Éxito',
+        'toast.warning': 'Advertencia',
+        'toast.danger': 'Error',
+
+        'confirm.title': 'Confirmación',
+        'confirm.no': 'Cancelar',
+        'confirm.yes': 'Sí, continuar',
+        'confirm.reportTitle': 'Generar reporte',
+        'confirm.reportMessage': '¿Desea generar el reporte en PDF?',
+        'confirm.reloadImagesTitle': 'Recargar imágenes',
+        'confirm.reloadImagesMessage': 'Se recargarán las imágenes y se reiniciará el análisis. ¿Desea continuar?',
 
         'msg.patientRegistered': 'Paciente registrado correctamente',
         'msg.patientUpdated': 'Paciente actualizado correctamente',
         'msg.profileUpdated': 'Perfil actualizado correctamente',
         'msg.selectImages': 'Por favor, ingrese imágenes de ojo derecho e izquierdo',
         'msg.analysisComplete': 'Análisis completo',
-        'msg.analysisCompleteDesc': 'El análisis ha finalizado correctamente.',
-        'msg.generateReportConfirm': '¿Desea generar el reporte en PDF?',
-        'msg.reportGenerated': 'Reporte generado correctamente',
+        'msg.analysisSaved': 'Análisis guardado en el historial',
         'msg.imagesLoaded': 'Ambas imágenes cargadas. Listo para analizar.',
         'msg.imageLoaded': 'Imagen cargada.',
         'msg.loginSuccess': 'Bienvenido',
         'msg.logoutSuccess': 'Sesión cerrada',
         'msg.invalidCredentials': 'Credenciales incorrectas. Por favor, verifica tus datos.',
         'msg.completeFields': 'Por favor, completa todos los campos.',
+        'msg.lastNamesRequired': 'Debe ingresar los dos apellidos.',
         'msg.dniExists': 'Ya existe un usuario con este DNI.',
         'msg.selectPatient': 'Por favor, seleccione un paciente',
         'msg.patientNotRegistered': 'Su cuenta no ha sido registrada por un médico. Por favor, contacte a su médico tratante.',
+        'msg.patientInactive': 'Su cuenta está dada de baja. Contacte a su médico tratante.',
         'msg.doctorRegistered': 'Cuenta médica registrada correctamente',
-        'msg.analysisReset': 'Análisis reiniciado. Puede realizar uno nuevo.',
+        'msg.reportGenerated': 'Reporte generado correctamente',
         'msg.noAnalysisYet': 'Aún no hay análisis registrados para este paciente.',
+        'msg.statusChanged': 'Estado del paciente actualizado',
+        'msg.patientInactiveWarning': 'El paciente está dado de baja. Active su cuenta para continuar.',
+        'msg.recordLoaded': 'Análisis cargado desde el historial',
+        'msg.recordLoadedAdvance': 'Se cargó el registro',
+        'msg.imagesAlreadyLoaded': 'Las imágenes del análisis previo se mantienen cargadas.',
+        'msg.imagesReset': 'Imágenes reiniciadas. Cargue nuevas imágenes para continuar.',
 
         'metric.cdNormal': 'Normal: < 0.5',
         'metric.rnflNormal': 'Normal: > 80 µm',
@@ -241,7 +254,7 @@ const TRANSLATIONS = {
         'risk.medium': 'Riesgo medio',
         'risk.low': 'Riesgo bajo',
 
-        'edu.percentText': 'El {prob}% represente la probabilidad de tener glaucoma, un porcentaje mayor indica un mayor probabilidad de riesgo. Recordar que es un diagnóstico preliminar no definitivo.',
+        'edu.percentText': 'El {prob}% representa la probabilidad de un diagnóstico de glaucoma. Un porcentaje mayor indica mayor riesgo. Recuerde que es un diagnóstico preliminar.',
         'edu.percentBarLeft': 'sin glaucoma',
         'edu.percentBarRight': 'con glaucoma',
         'edu.percentInfo': 'Solo su médico puede confirmar el diagnóstico final.',
@@ -264,7 +277,7 @@ const TRANSLATIONS = {
 
         'appt.doctorName': 'Dr. Carlos Ramírez Torres',
         'appt.doctorInfo': 'Oftalmólogo · CMP 48923',
-        'appt.location': 'Clínica San Lucas · Jr. Las Américas 340, Chiclayo',
+        'appt.location': 'Clínica ##### · Calle ######, Lima',
         'appt.reminder': 'Recuerde llegar 15 minutos antes. Traiga sus anteojos y una lista de sus medicamentos actuales.',
         'appt.history1': 'Dr. Ramírez · Análisis IA realizado',
         'appt.history2': 'Dr. Ramírez · Control de presión',
@@ -275,17 +288,24 @@ const TRANSLATIONS = {
         'report.interpretationMedium': 'Los indicadores morfológicos muestran hallazgos compatibles con glaucoma incipiente. Se recomienda seguimiento estrecho con evaluación perimetral en los próximos meses.',
         'report.interpretationLow': 'Los indicadores morfológicos se encuentran dentro de parámetros normales. Se recomienda continuar con controles oftalmológicos de rutina.',
         'report.disclaimer': 'Este reporte es de carácter preliminar y de apoyo al diagnóstico. No reemplaza la evaluación clínica del especialista.',
+        'report.patientHigh': 'Su examen muestra señales que deben ser revisadas por su médico. Esto no significa que tenga glaucoma, pero es importante que su médico lo evalúe pronto para descartarlo o tratarlo a tiempo.',
+        'report.patientMedium': 'Su examen muestra algunas señales que conviene vigilar. Su médico revisará el resultado con usted y le indicará si necesita exámenes adicionales.',
+        'report.patientLow': 'Su examen muestra resultados dentro de lo normal. Continúe con sus controles oftalmológicos periódicos para mantener su salud visual.',
 
         'gradcam.info': 'El mapa de calor muestra las regiones que la IA consideró más relevantes para su clasificación. Las zonas en rojo/naranja indican alta relevancia.',
         'gradcam.highActivation': 'Alta activación',
         'gradcam.mediumActivation': 'Activación media',
-        'gradcam.odDesc': 'El modelo se enfoca en la región del disco óptico y la copa, donde se observa una relación C/D elevada.',
-        'gradcam.oiDesc': 'El modelo muestra activación en la zona nasal inferior del anillo neuroretinal.',
+        'gradcam.lowActivation': 'Baja activación',
+        'gradcam.highOdDesc': 'El modelo detectó alta activación en el disco óptico, con una relación copa/disco elevada. Esto sugiere pérdida de fibras nerviosas compatible con glaucoma.',
+        'gradcam.highOiDesc': 'El modelo muestra activación significativa en la zona nasal inferior del anillo neuroretinal, hallazgo frecuente en el glaucoma.',
+        'gradcam.lowOdDesc': 'El modelo no encontró patrones de alta activación. El disco óptico y la copa presentan características dentro de lo esperado.',
+        'gradcam.lowOiDesc': 'El modelo no detectó zonas de riesgo significativo. La morfología del nervio óptico se encuentra dentro de parámetros normales.',
         'gradcam.legendHigh': 'Alta relevancia',
         'gradcam.legendMedium': 'Relevancia media',
         'gradcam.legendLow': 'Baja relevancia',
         'gradcam.interpretationTitle': 'Interpretación del mapa',
-        'gradcam.interpretationText': 'El modelo focalizó su atención principalmente en la región del disco óptico y la copa. La zona nasal inferior del anillo neuroretinal muestra el mayor nivel de activación, compatible con pérdida de fibras nerviosas característica del glaucoma.',
+        'gradcam.interpretationHigh': 'El modelo focalizó su atención en la región del disco óptico y la copa. La zona nasal inferior del anillo neuroretinal muestra el mayor nivel de activación, compatible con pérdida de fibras nerviosas característica del glaucoma. Se recomienda evaluación especializada urgente.',
+        'gradcam.interpretationLow': 'El modelo no detectó zonas de alta activación significativa. Las regiones del disco óptico y anillo neuroretinal muestran patrones compatibles con un nervio óptico sano. Se recomienda continuar con controles oftalmológicos de rutina.',
         'gradcam.eyeOd': 'Ojo Derecho (OD)',
         'gradcam.eyeOi': 'Ojo Izquierdo (OI)',
         'gradcam.reportTitle': 'Mapa de Calor IA (Grad-CAM)',
@@ -311,7 +331,6 @@ const TRANSLATIONS = {
         'auth.password': 'Password / Code',
         'auth.login': 'Sign In',
         'auth.or': 'or',
-        'auth.register': "Don't have an account?",
         'auth.names': 'First Names',
         'auth.lastNames': 'Last Names',
         'auth.dni': 'ID Number',
@@ -324,7 +343,6 @@ const TRANSLATIONS = {
         'auth.patientInfo': 'Your account must be created by your treating doctor. If already registered, sign in with your ID and password.',
         'auth.doctorInfo': 'You can sign in with your account or register a new medical account.',
         'auth.registerDoctor': 'Register new doctor',
-        'auth.contactSupport': 'Contact support',
 
         'home.badge': 'AI applied to ophthalmology',
         'home.title': 'Support for preliminary glaucoma diagnosis',
@@ -358,7 +376,6 @@ const TRANSLATIONS = {
         'patient.nav.appointments': 'My appointments',
         'patient.nav.report': 'My report',
         'patient.nav.help': 'Help',
-        'patient.dashboard.title': 'My visual health',
         'patient.dashboard.lastAnalysis': 'Last analysis',
         'patient.dashboard.probability': 'Glaucoma probability',
         'patient.dashboard.nextAppointment': 'Next appointment',
@@ -368,15 +385,15 @@ const TRANSLATIONS = {
         'patient.dashboard.myReport': 'My report',
         'patient.dashboard.noAnalysis': 'No analysis recorded yet',
         'patient.upload.title': 'Upload fundus image',
-        'patient.upload.info': 'Simulates fundus image upload. Click on each eye to load the image.',
+        'patient.upload.info': 'Loading fundus images. Click on each eye to load the image.',
         'patient.upload.rightEye': 'Right Eye (OD)',
         'patient.upload.leftEye': 'Left Eye (OS)',
-        'patient.upload.clickToLoad': 'Click to simulate load',
+        'patient.upload.clickToLoad': 'Click to upload the image',
         'patient.upload.pending': 'Pending',
         'patient.upload.loaded': 'Loaded',
         'patient.upload.success': 'Images loaded successfully',
         'patient.upload.analyzing': 'AI is analyzing your images. You will receive a preliminary result.',
-        'patient.upload.analyzeBtn': 'Analyze images (simulation)',
+        'patient.upload.analyzeBtn': 'Analyze images',
         'patient.result.title': 'My result',
         'patient.result.analysisResult': 'Analysis result',
         'patient.result.probability': 'Probability',
@@ -445,10 +462,11 @@ const TRANSLATIONS = {
         'doctor.dashboard.action': 'Action',
         'doctor.dashboard.view': 'View',
         'doctor.dashboard.edit': 'Edit',
+        'doctor.dashboard.status': 'Status',
         'doctor.newPatient.title': 'Register new patient',
         'doctor.newPatient.personalData': 'Personal data',
         'doctor.newPatient.names': 'First Names',
-        'doctor.newPatient.lastNames': 'Last Names',
+        'doctor.newPatient.lastNames': 'Last Names (two last names required)',
         'doctor.newPatient.dni': 'ID Number',
         'doctor.newPatient.birthDate': 'Date of birth',
         'doctor.newPatient.password': 'Access password',
@@ -456,17 +474,20 @@ const TRANSLATIONS = {
         'doctor.newPatient.pioOi': 'IOP OS (mmHg)',
         'doctor.newPatient.cancel': 'Cancel',
         'doctor.newPatient.save': 'Save patient',
-        'doctor.newPatient.help': 'Register the patient with their data and an access password. The patient will use their ID and this password to sign in.',
+        'doctor.newPatient.help': 'Register the patient with their data and an access password. Both last names are required.',
         'doctor.editPatient.title': 'Edit patient',
         'doctor.editPatient.save': 'Save changes',
         'doctor.registeredPatients.title': 'Registered patients',
         'doctor.registeredPatients.search': 'Search patient...',
         'doctor.registeredPatients.noPatients': 'No registered patients',
+        'doctor.registeredPatients.showing': 'Showing',
+        'doctor.registeredPatients.of': 'of',
+        'doctor.registeredPatients.patients': 'patients',
+        'doctor.registeredPatients.header': 'Patient (Last names / First names)',
         'doctor.newAnalysis.title': 'AI Analysis',
         'doctor.newAnalysis.patient': 'Patient',
         'doctor.newAnalysis.searchPatient': 'Search patient by name or ID...',
         'doctor.newAnalysis.noResults': 'No patients found',
-        'doctor.newAnalysis.noPatients': 'No registered patients. Register one first in "New patient".',
         'doctor.newAnalysis.step1': 'Data',
         'doctor.newAnalysis.step2': 'Images',
         'doctor.newAnalysis.step3': 'Analysis',
@@ -474,10 +495,10 @@ const TRANSLATIONS = {
         'doctor.newAnalysis.step5': 'AI Map',
         'doctor.newAnalysis.next': 'Next',
         'doctor.newAnalysis.back': 'Back',
+        'doctor.newAnalysis.backToImages': 'Back to images',
         'doctor.newAnalysis.startAnalysis': 'Start analysis',
         'doctor.newAnalysis.analyzing': 'Analyzing images',
         'doctor.newAnalysis.processing': 'AI is processing fundus images...',
-        'doctor.newAnalysis.viewResults': 'View results',
         'doctor.newAnalysis.diagnosisResult': 'Diagnosis result',
         'doctor.newAnalysis.probabilityEstimated': 'Estimated probability',
         'doctor.newAnalysis.cdRatio': 'C/D Ratio',
@@ -486,7 +507,7 @@ const TRANSLATIONS = {
         'doctor.newAnalysis.aiConfidence': 'AI Confidence',
         'doctor.newAnalysis.clinicalInterpretation': 'Clinical interpretation',
         'doctor.newAnalysis.viewAIMap': 'View AI map',
-        'doctor.newAnalysis.saveAndReport': 'Save and generate report',
+        'doctor.newAnalysis.generateReport': 'Generate report',
         'doctor.history.title': 'Diagnosis history',
         'doctor.history.search': 'Search...',
         'doctor.history.all': 'All',
@@ -494,39 +515,54 @@ const TRANSLATIONS = {
         'doctor.history.mediumRisk': 'Medium risk',
         'doctor.history.lowRisk': 'Low risk',
         'doctor.history.noRecords': 'No analysis records',
+        'doctor.history.noFilterResults': 'No analyses match the filter',
         'doctor.help.title': 'Help Center',
         'doctor.help.contact': 'Technical contact',
 
-        'alert.info': 'Information',
-        'alert.success': 'Success',
-        'alert.warning': 'Warning',
-        'alert.danger': 'Error',
-        'alert.confirm': 'Confirmation',
-        'alert.accept': 'Accept',
-        'alert.cancel': 'Cancel',
-        'alert.yes': 'Yes',
-        'alert.no': 'No',
+        'status.active': 'Active',
+        'status.inactive': 'Inactive',
+        'status.title': 'Patient status',
+        'status.help': 'Select the new status. Deactivation is logical, it does not delete the record.',
+
+        'toast.info': 'Information',
+        'toast.success': 'Success',
+        'toast.warning': 'Warning',
+        'toast.danger': 'Error',
+
+        'confirm.title': 'Confirmation',
+        'confirm.no': 'Cancel',
+        'confirm.yes': 'Yes, continue',
+        'confirm.reportTitle': 'Generate report',
+        'confirm.reportMessage': 'Do you want to generate the PDF report?',
+        'confirm.reloadImagesTitle': 'Reload images',
+        'confirm.reloadImagesMessage': 'Images will be reloaded and the analysis will be restarted. Do you want to continue?',
 
         'msg.patientRegistered': 'Patient registered successfully',
         'msg.patientUpdated': 'Patient updated successfully',
         'msg.profileUpdated': 'Profile updated successfully',
         'msg.selectImages': 'Please upload right and left eye images',
         'msg.analysisComplete': 'Analysis complete',
-        'msg.analysisCompleteDesc': 'The analysis has finished successfully.',
-        'msg.generateReportConfirm': 'Do you want to generate the PDF report?',
-        'msg.reportGenerated': 'Report generated successfully',
+        'msg.analysisSaved': 'Analysis saved to history',
         'msg.imagesLoaded': 'Both images loaded. Ready to analyze.',
         'msg.imageLoaded': 'Image loaded.',
         'msg.loginSuccess': 'Welcome',
         'msg.logoutSuccess': 'Session closed',
         'msg.invalidCredentials': 'Invalid credentials. Please verify your data.',
         'msg.completeFields': 'Please complete all fields.',
+        'msg.lastNamesRequired': 'You must enter both last names.',
         'msg.dniExists': 'A user with this ID already exists.',
         'msg.selectPatient': 'Please select a patient',
         'msg.patientNotRegistered': 'Your account has not been registered by a doctor. Please contact your treating doctor.',
+        'msg.patientInactive': 'Your account is inactive. Please contact your treating doctor.',
         'msg.doctorRegistered': 'Medical account registered successfully',
-        'msg.analysisReset': 'Analysis reset. You can perform a new one.',
+        'msg.reportGenerated': 'Report generated successfully',
         'msg.noAnalysisYet': 'No analyses recorded for this patient yet.',
+        'msg.statusChanged': 'Patient status updated',
+        'msg.patientInactiveWarning': 'The patient is inactive. Activate their account to continue.',
+        'msg.recordLoaded': 'Analysis loaded from history',
+        'msg.recordLoadedAdvance': 'Record loaded',
+        'msg.imagesAlreadyLoaded': 'Previous analysis images remain loaded.',
+        'msg.imagesReset': 'Images reset. Load new images to continue.',
 
         'metric.cdNormal': 'Normal: < 0.5',
         'metric.rnflNormal': 'Normal: > 80 µm',
@@ -537,7 +573,7 @@ const TRANSLATIONS = {
         'risk.medium': 'Medium risk',
         'risk.low': 'Low risk',
 
-        'edu.percentText': 'The {prob}% means that out of 100 people with images similar to yours, {prob} have glaucoma. It is an important signal, not a definitive diagnosis.',
+        'edu.percentText': 'The {prob}% represents the probability of a glaucoma diagnosis. A higher percentage indicates higher risk. Remember this is a preliminary diagnosis.',
         'edu.percentBarLeft': 'without glaucoma',
         'edu.percentBarRight': 'with glaucoma',
         'edu.percentInfo': 'Only your doctor can confirm the final diagnosis.',
@@ -560,7 +596,7 @@ const TRANSLATIONS = {
 
         'appt.doctorName': 'Dr. Carlos Ramírez Torres',
         'appt.doctorInfo': 'Ophthalmologist · CMP 48923',
-        'appt.location': 'San Lucas Clinic · Jr. Las Américas 340, Chiclayo',
+        'appt.location': 'Clinic ####### · Street ##########, Lima',
         'appt.reminder': 'Remember to arrive 15 minutes early. Bring your glasses and a list of your current medications.',
         'appt.history1': 'Dr. Ramírez · AI analysis performed',
         'appt.history2': 'Dr. Ramírez · Pressure control',
@@ -571,17 +607,24 @@ const TRANSLATIONS = {
         'report.interpretationMedium': 'Morphological indicators show findings compatible with incipient glaucoma. Close follow-up with perimetric evaluation is recommended in the coming months.',
         'report.interpretationLow': 'Morphological indicators are within normal parameters. Continue with routine ophthalmological check-ups.',
         'report.disclaimer': 'This report is preliminary and for diagnostic support. It does not replace the clinical evaluation of the specialist.',
+        'report.patientHigh': 'Your exam shows signs that should be reviewed by your doctor. This does not mean you have glaucoma, but it is important that your doctor evaluates you soon to rule it out or treat it in time.',
+        'report.patientMedium': 'Your exam shows some signs worth monitoring. Your doctor will review the result with you and indicate whether additional tests are needed.',
+        'report.patientLow': 'Your exam shows results within normal range. Continue with your regular eye check-ups to maintain your visual health.',
 
         'gradcam.info': 'The heatmap shows the regions the AI considered most relevant for its classification. Red/orange areas indicate high relevance.',
         'gradcam.highActivation': 'High activation',
         'gradcam.mediumActivation': 'Medium activation',
-        'gradcam.odDesc': 'The model focuses on the optic disc and cup region, where an elevated C/D ratio is observed.',
-        'gradcam.oiDesc': 'The model shows activation in the inferior nasal zone of the neuroretinal rim.',
+        'gradcam.lowActivation': 'Low activation',
+        'gradcam.highOdDesc': 'The model detected high activation in the optic disc, with an elevated cup-to-disc ratio. This suggests nerve fiber loss compatible with glaucoma.',
+        'gradcam.highOiDesc': 'The model shows significant activation in the inferior nasal zone of the neuroretinal rim, a common finding in glaucoma.',
+        'gradcam.lowOdDesc': 'The model did not find high activation patterns. The optic disc and cup present features within expected parameters.',
+        'gradcam.lowOiDesc': 'The model did not detect significant risk zones. The optic nerve morphology is within normal parameters.',
         'gradcam.legendHigh': 'High relevance',
         'gradcam.legendMedium': 'Medium relevance',
         'gradcam.legendLow': 'Low relevance',
         'gradcam.interpretationTitle': 'Map interpretation',
-        'gradcam.interpretationText': 'The model focused its attention mainly on the optic disc and cup region. The inferior nasal zone of the neuroretinal rim shows the highest activation level, consistent with nerve fiber loss characteristic of glaucoma.',
+        'gradcam.interpretationHigh': 'The model focused its attention on the optic disc and cup region. The inferior nasal zone of the neuroretinal rim shows the highest activation level, consistent with nerve fiber loss characteristic of glaucoma. Urgent specialist evaluation is recommended.',
+        'gradcam.interpretationLow': 'The model did not detect significant high-activation zones. The optic disc and neuroretinal rim regions show patterns compatible with a healthy optic nerve. Continue with routine ophthalmological check-ups.',
         'gradcam.eyeOd': 'Right Eye (OD)',
         'gradcam.eyeOi': 'Left Eye (OS)',
         'gradcam.reportTitle': 'AI Heatmap (Grad-CAM)',
@@ -631,50 +674,69 @@ function switchLanguage(lang) {
 }
 
 // ============================================================
-// Alert Modal
+// Toast Notifications
 // ============================================================
-let alertCallback = null;
+function showToast(type, title, message, duration = 4000) {
+    const container = document.getElementById('toastContainer');
+    if (!container) return;
 
-function showAlert(type, title, message, callback) {
-    const modal = document.getElementById('alertModal');
-    const icon = document.getElementById('alertModalIcon');
-    const titleEl = document.getElementById('alertModalTitle');
-    const messageEl = document.getElementById('alertModalMessage');
-    const actions = document.getElementById('alertModalActions');
-    if (!modal || !icon || !titleEl || !messageEl || !actions) return;
-
-    icon.className = 'alert-modal-icon ' + type;
     const icons = {
-        'info': 'fas fa-info-circle', 'success': 'fas fa-check-circle',
-        'warning': 'fas fa-exclamation-triangle', 'danger': 'fas fa-times-circle',
-        'confirm': 'fas fa-question-circle'
+        'info': 'fas fa-info-circle',
+        'success': 'fas fa-check-circle',
+        'warning': 'fas fa-exclamation-triangle',
+        'danger': 'fas fa-times-circle'
     };
-    icon.innerHTML = `<i class="${icons[type] || icons.info}"></i>`;
-    titleEl.textContent = title;
-    messageEl.textContent = message;
+    const validType = ['info', 'success', 'warning', 'danger'].includes(type) ? type : 'info';
 
-    if (type === 'confirm') {
-        actions.innerHTML = `
-            <button class="btn btn-secondary" onclick="closeAlertModal()">${t('alert.no')}</button>
-            <button class="btn btn-primary" onclick="confirmAlertModal()">${t('alert.yes')}</button>
-        `;
-    } else {
-        actions.innerHTML = `<button class="btn btn-primary" onclick="closeAlertModal()">${t('alert.accept')}</button>`;
-    }
-    alertCallback = callback || null;
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${validType}`;
+    toast.innerHTML = `
+        <div class="toast-icon"><i class="${icons[validType]}"></i></div>
+        <div class="toast-body">
+            <div class="toast-title">${title}</div>
+            <div class="toast-message">${message}</div>
+        </div>
+        <button class="toast-close" aria-label="Cerrar"><i class="fas fa-times"></i></button>
+        <div class="toast-progress" style="animation-duration: ${duration}ms;"></div>
+    `;
+    container.appendChild(toast);
+
+    const removeToast = () => {
+        if (!toast.parentNode) return;
+        toast.classList.add('toast-exit');
+        setTimeout(() => { if (toast.parentNode) toast.remove(); }, 300);
+    };
+
+    toast.querySelector('.toast-close').addEventListener('click', removeToast);
+    setTimeout(removeToast, duration);
+}
+
+// ============================================================
+// Confirm Modal
+// ============================================================
+let confirmCallback = null;
+
+function showConfirm(title, message, callback) {
+    const modal = document.getElementById('confirmModal');
+    if (!modal) return;
+    document.getElementById('confirmModalTitle').textContent = title;
+    document.getElementById('confirmModalMessage').textContent = message;
+    document.getElementById('confirmModalNo').textContent = t('confirm.no');
+    document.getElementById('confirmModalYes').textContent = t('confirm.yes');
+    confirmCallback = callback;
     modal.classList.add('open');
 }
 
-function closeAlertModal() {
-    const modal = document.getElementById('alertModal');
+function closeConfirmModal() {
+    const modal = document.getElementById('confirmModal');
     if (modal) modal.classList.remove('open');
-    alertCallback = null;
+    confirmCallback = null;
 }
 
-function confirmAlertModal() {
-    const modal = document.getElementById('alertModal');
+function acceptConfirmModal() {
+    const modal = document.getElementById('confirmModal');
     if (modal) modal.classList.remove('open');
-    if (alertCallback) { alertCallback(); alertCallback = null; }
+    if (confirmCallback) { confirmCallback(); confirmCallback = null; }
 }
 
 // ============================================================
@@ -693,7 +755,15 @@ const AppState = {
     patients: [],
     doctors: [],
     history: [],
-    analysisCounter: 47,
+    analysisCounter: 1080,
+    patientsCurrentPage: 1,
+    patientsPerPage: 8,
+    patientsSearchTerm: '',
+    historyPage: 1,
+    historySearchTerm: '',
+    historyRiskFilter: 'all',
+    // Flag para saber si estamos viendo un análisis histórico
+    viewingHistoricalAnalysis: false,
     UIState: {
         activePatientPanel: 'panel-dash',
         activeDoctorPanel: 'dpanel-dash',
@@ -706,7 +776,8 @@ function initAppState() {
     AppState.patients = db.patients || [];
     AppState.doctors = db.doctors || [];
     AppState.history = db.history || [];
-    AppState.analysisCounter = db.analysisCounter || 47;
+    AppState.analysisCounter = db.analysisCounter || 1080;
+    AppState.patientsPerPage = db.patientsPerPage || 8;
 }
 
 function persistAppState() {
@@ -715,6 +786,7 @@ function persistAppState() {
     db.doctors = AppState.doctors;
     db.history = AppState.history;
     db.analysisCounter = AppState.analysisCounter;
+    db.patientsPerPage = AppState.patientsPerPage;
     window.DB.save(db);
 }
 
@@ -735,6 +807,26 @@ function navigateTo(screen) {
     AppState.currentScreen = screen;
     if (screen === 'patient') initPatientDashboard();
     if (screen === 'doctor') initDoctorDashboard();
+}
+
+// ============================================================
+// Helpers
+// ============================================================
+function sortPatientsByLastName(patients) {
+    return [...patients].sort((a, b) => {
+        const cmp = a.lastName.localeCompare(b.lastName, 'es');
+        if (cmp !== 0) return cmp;
+        return a.name.localeCompare(b.name, 'es');
+    });
+}
+
+function splitFullName(fullName) {
+    const parts = (fullName || '').trim().split(/\s+/);
+    if (parts.length <= 1) return { lastNames: fullName || '', firstNames: '' };
+    if (parts.length === 2) return { lastNames: parts[0], firstNames: parts[1] };
+    const lastNames = parts.slice(0, 2).join(' ');
+    const firstNames = parts.slice(2).join(' ');
+    return { lastNames, firstNames };
 }
 
 // ============================================================
@@ -1102,10 +1194,10 @@ function renderDoctorPortal() {
                         <button class="sidebar-nav-item" data-dpanel="dpanel-patient" onclick="showDoctorPanel('dpanel-patient')">
                             <i class="fas fa-user-plus"></i> <span>${t('doctor.nav.newPatient')}</span>
                         </button>
-                        <button class="sidebar-nav-item" data-dpanel="dpanel-registered" onclick="showDoctorPanel('dpanel-registered')">
+                        <button class="sidebar-nav-item" data-dpanel="dpanel-registered" onclick="openRegisteredPatientsPanel()">
                             <i class="fas fa-users"></i> <span>${t('doctor.nav.registeredPatients')}</span>
                         </button>
-                        <button class="sidebar-nav-item" data-dpanel="dpanel-analysis" onclick="showDoctorPanel('dpanel-analysis')">
+                        <button class="sidebar-nav-item" data-dpanel="dpanel-analysis" onclick="startNewAnalysisFlow()">
                             <i class="fas fa-upload"></i> <span>${t('doctor.nav.newAnalysis')}</span>
                         </button>
                         <button class="sidebar-nav-item" data-dpanel="dpanel-history" onclick="showDoctorPanel('dpanel-history')">
@@ -1180,12 +1272,21 @@ function renderDoctorPortal() {
                         </div>
                         <div class="table-wrap">
                             <div class="table-header">
-                                <input class="form-control" placeholder="${t('doctor.registeredPatients.search')}" id="registeredSearch" style="max-width:280px; padding:10px 16px; font-size:16px;" oninput="filterRegisteredPatients()" />
+                                <input class="form-control" placeholder="${t('doctor.registeredPatients.search')}" id="registeredSearch" style="max-width:280px; padding:10px 16px; font-size:16px;" oninput="onRegisteredSearch(this.value)" />
                             </div>
-                            <table>
-                                <thead><tr><th>${t('doctor.dashboard.patient')}</th><th>DNI</th><th>${t('doctor.dashboard.age')}</th><th>PIO OD</th><th>PIO OI</th><th>${t('doctor.dashboard.action')}</th></tr></thead>
+                            <table class="registered-table">
+                                <thead><tr>
+                                    <th>${t('doctor.registeredPatients.header')}</th>
+                                    <th>DNI</th>
+                                    <th>${t('doctor.dashboard.age')}</th>
+                                    <th>PIO OD</th>
+                                    <th>PIO OI</th>
+                                    <th>${t('doctor.dashboard.status')}</th>
+                                    <th>${t('doctor.dashboard.action')}</th>
+                                </tr></thead>
                                 <tbody id="registeredPatientsTable"></tbody>
                             </table>
+                            <div class="pagination" id="patientsPagination"></div>
                         </div>
                     </div>
 
@@ -1268,7 +1369,6 @@ function renderDoctorPortal() {
                                         <div class="processing-step pending" id="procStep4"><i class="far fa-circle"></i> Clasificación por modelo ResNet-50</div>
                                         <div class="processing-step pending" id="procStep5"><i class="far fa-circle"></i> Generación de mapa de atención</div>
                                     </div>
-                                    <button class="btn btn-primary" id="showResultsBtn" style="display:none; margin-top:20px;" onclick="goToStep(4)"><i class="fas fa-chart-bar"></i> ${t('doctor.newAnalysis.viewResults')}</button>
                                 </div>
                             </div>
 
@@ -1303,6 +1403,7 @@ function renderDoctorPortal() {
                                     </div>
                                     <div class="results-actions">
                                         <button class="btn btn-outline-primary" onclick="goToStep(5)"><i class="fas fa-eye"></i> ${t('doctor.newAnalysis.viewAIMap')}</button>
+                                        <button class="btn btn-secondary" onclick="reloadImagesForVerification()"><i class="fas fa-images"></i> ${t('doctor.newAnalysis.backToImages')}</button>
                                     </div>
                                 </div>
                             </div>
@@ -1342,8 +1443,8 @@ function renderDoctorPortal() {
                                                 <span class="gradcam-label">OD</span>
                                             </div>
                                             <div class="gradcam-info">
-                                                <span class="gradcam-badge high">${t('gradcam.highActivation')}</span>
-                                                <p>${t('gradcam.odDesc')}</p>
+                                                <span class="gradcam-badge high" id="gradcamOdBadge">${t('gradcam.highActivation')}</span>
+                                                <p id="gradcamOdDesc">${t('gradcam.highOdDesc')}</p>
                                             </div>
                                         </div>
                                         <div class="gradcam-card">
@@ -1374,8 +1475,8 @@ function renderDoctorPortal() {
                                                 <span class="gradcam-label">OI</span>
                                             </div>
                                             <div class="gradcam-info">
-                                                <span class="gradcam-badge medium">${t('gradcam.mediumActivation')}</span>
-                                                <p>${t('gradcam.oiDesc')}</p>
+                                                <span class="gradcam-badge medium" id="gradcamOiBadge">${t('gradcam.mediumActivation')}</span>
+                                                <p id="gradcamOiDesc">${t('gradcam.highOiDesc')}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -1386,11 +1487,12 @@ function renderDoctorPortal() {
                                     </div>
                                     <div class="gradcam-interpretation">
                                         <h4><i class="fas fa-lightbulb"></i> ${t('gradcam.interpretationTitle')}</h4>
-                                        <p>${t('gradcam.interpretationText')}</p>
+                                        <p id="gradcamInterpretationText">${t('gradcam.interpretationHigh')}</p>
                                     </div>
                                     <div class="results-actions">
                                         <button class="btn btn-outline-primary" onclick="goToStep(4)"><i class="fas fa-arrow-left"></i> ${t('doctor.newAnalysis.back')}</button>
-                                        <button class="btn btn-primary" onclick="saveAndGenerateReport()"><i class="fas fa-file-pdf"></i> ${t('doctor.newAnalysis.saveAndReport')}</button>
+                                        <button class="btn btn-secondary" onclick="reloadImagesForVerification()"><i class="fas fa-images"></i> ${t('doctor.newAnalysis.backToImages')}</button>
+                                        <button class="btn btn-primary" onclick="generateReportOnly()"><i class="fas fa-file-pdf"></i> ${t('doctor.newAnalysis.generateReport')}</button>
                                     </div>
                                 </div>
                             </div>
@@ -1404,8 +1506,8 @@ function renderDoctorPortal() {
                         <div class="table-wrap">
                             <div class="table-header">
                                 <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                                    <input class="form-control" placeholder="${t('doctor.history.search')}" id="historySearch" style="max-width:220px; padding:10px 14px; font-size:16px;" oninput="filterHistory()" />
-                                    <select class="form-control" id="historyFilter" style="max-width:180px; padding:10px 14px; font-size:16px;" onchange="filterHistory()">
+                                    <input class="form-control" placeholder="${t('doctor.history.search')}" id="historySearch" style="max-width:220px; padding:10px 14px; font-size:16px;" oninput="onHistorySearch(this.value)" />
+                                    <select class="form-control" id="historyFilter" style="max-width:180px; padding:10px 14px; font-size:16px;" onchange="onHistoryFilterChange(this.value)">
                                         <option value="all">${t('doctor.history.all')}</option>
                                         <option value="high">${t('doctor.history.highRisk')}</option>
                                         <option value="medium">${t('doctor.history.mediumRisk')}</option>
@@ -1417,6 +1519,7 @@ function renderDoctorPortal() {
                                 <thead><tr><th>#</th><th>${t('doctor.dashboard.patient')}</th><th>${t('doctor.dashboard.age')}</th><th>Fecha</th><th>C/D</th><th>${t('doctor.dashboard.result')}</th><th>${t('doctor.dashboard.action')}</th></tr></thead>
                                 <tbody id="historyTableBody"></tbody>
                             </table>
+                            <div class="pagination" id="historyPagination"></div>
                         </div>
                     </div>
 
@@ -1465,11 +1568,12 @@ function formatDateShort(date) {
 }
 
 function getRiskLabel(risk) { return t('risk.' + risk) || risk; }
-
 function getRiskBadge(risk) {
     const classes = { 'high': 'badge-danger', 'medium': 'badge-warning', 'low': 'badge-success' };
     return classes[risk] || 'badge-info';
 }
+function getStatusLabel(status) { return status === 'inactive' ? t('status.inactive') : t('status.active'); }
+function getStatusBadge(status) { return status === 'inactive' ? 'status-badge inactive' : 'status-badge active'; }
 
 function logoutPatient() {
     AppState.isLoggedIn = false;
@@ -1478,7 +1582,7 @@ function logoutPatient() {
     AppState.selectedPatientForAnalysis = null;
     resetAnalysisState();
     navigateTo('home');
-    showAlert('info', t('alert.info'), t('msg.logoutSuccess'));
+    showToast('info', t('toast.info'), t('msg.logoutSuccess'));
 }
 
 function logoutDoctor() {
@@ -1488,12 +1592,13 @@ function logoutDoctor() {
     AppState.selectedPatientForAnalysis = null;
     resetAnalysisState();
     navigateTo('home');
-    showAlert('info', t('alert.info'), t('msg.logoutSuccess'));
+    showToast('info', t('toast.info'), t('msg.logoutSuccess'));
 }
 
 function resetAnalysisState() {
     AppState.uploadedImages = { od: false, oi: false };
     AppState.isAnalysisComplete = false;
+    AppState.viewingHistoricalAnalysis = false;
     AppState.UIState.currentAnalysisStep = 1;
 }
 
@@ -1582,18 +1687,22 @@ function handleAuth() {
     const password = passInput.value.trim();
 
     if (!user || !password) {
-        showAlert('warning', t('alert.warning'), t('msg.completeFields'));
+        showToast('warning', t('toast.warning'), t('msg.completeFields'));
         return;
     }
 
     if (AppState.userType === 'patient') {
         const patient = AppState.patients.find(p => p.dni === user);
         if (!patient) {
-            showAlert('warning', t('alert.warning'), t('msg.patientNotRegistered'));
+            showToast('warning', t('toast.warning'), t('msg.patientNotRegistered'));
             return;
         }
         if (patient.password !== password) {
-            showAlert('danger', t('alert.danger'), t('msg.invalidCredentials'));
+            showToast('danger', t('toast.danger'), t('msg.invalidCredentials'));
+            return;
+        }
+        if (patient.status === 'inactive') {
+            showToast('danger', t('toast.danger'), t('msg.patientInactive'));
             return;
         }
         AppState.currentUser = {
@@ -1617,15 +1726,15 @@ function handleAuth() {
         AppState.isLoggedIn = true;
         closeAuthModal();
         navigateTo('patient');
-        showAlert('success', t('alert.success'), `${t('msg.loginSuccess')} ${patient.name}`);
+        showToast('success', t('toast.success'), `${t('msg.loginSuccess')} ${patient.name}`);
     } else {
         const doctor = AppState.doctors.find(d => d.dni === user);
         if (!doctor) {
-            showAlert('warning', t('alert.warning'), t('msg.invalidCredentials'));
+            showToast('warning', t('toast.warning'), t('msg.invalidCredentials'));
             return;
         }
         if (doctor.password !== password) {
-            showAlert('danger', t('alert.danger'), t('msg.invalidCredentials'));
+            showToast('danger', t('toast.danger'), t('msg.invalidCredentials'));
             return;
         }
         AppState.currentUser = {
@@ -1635,7 +1744,7 @@ function handleAuth() {
         AppState.isLoggedIn = true;
         closeAuthModal();
         navigateTo('doctor');
-        showAlert('success', t('alert.success'), `${t('msg.loginSuccess')} Dr. ${doctor.name}`);
+        showToast('success', t('toast.success'), `${t('msg.loginSuccess')} Dr. ${doctor.name}`);
     }
 }
 
@@ -1654,31 +1763,26 @@ function handleDoctorRegister() {
     const password = passwordEl.value.trim();
 
     if (!name || !lastName || !dni || !password) {
-        showAlert('warning', t('alert.warning'), t('msg.completeFields'));
+        showToast('warning', t('toast.warning'), t('msg.completeFields'));
         return;
     }
 
     const existsInDoctors = AppState.doctors.find(d => d.dni === dni);
     const existsInPatients = AppState.patients.find(p => p.dni === dni);
     if (existsInDoctors || existsInPatients) {
-        showAlert('danger', t('alert.danger'), t('msg.dniExists'));
+        showToast('danger', t('toast.danger'), t('msg.dniExists'));
         return;
     }
 
     AppState.doctors.push({
         id: 'd' + (AppState.doctors.length + 1),
-        name: name,
-        lastName: lastName,
-        dni: dni,
-        password: password,
-        cmp: cmp
+        name, lastName, dni, password, cmp
     });
     persistAppState();
 
-    showAlert('success', t('alert.success'), t('msg.doctorRegistered'));
+    showToast('success', t('toast.success'), t('msg.doctorRegistered'));
     showLoginForm();
-    const userInput = document.getElementById('authUser');
-    if (userInput) userInput.value = dni;
+    if (document.getElementById('authUser')) document.getElementById('authUser').value = dni;
     nameEl.value = '';
     lastNameEl.value = '';
     dniEl.value = '';
@@ -1765,11 +1869,11 @@ function updatePatientResults() {
 
     if (dashboardAlert) {
         if (risk === 'high') {
-            dashboardAlert.innerHTML = `<div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i><div><strong>${t('alert.warning')}</strong><p>${t('patient.result.doctorWillExplain')}</p></div><button class="btn btn-sm btn-outline-danger" onclick="showPatientPanel('panel-citas')">${t('patient.nav.appointments')}</button></div>`;
+            dashboardAlert.innerHTML = `<div class="alert alert-danger"><i class="fas fa-exclamation-triangle"></i><div><strong>${t('toast.warning')}</strong><p>${t('patient.result.doctorWillExplain')}</p></div><button class="btn btn-sm btn-outline-danger" onclick="showPatientPanel('panel-citas')">${t('patient.nav.appointments')}</button></div>`;
         } else if (risk === 'medium') {
             dashboardAlert.innerHTML = `<div class="alert alert-warning"><i class="fas fa-info-circle"></i><div>${t('patient.result.doctorWillExplain')}</div></div>`;
         } else {
-            dashboardAlert.innerHTML = `<div class="alert alert-success"><i class="fas fa-check-circle"></i><div>${t('report.interpretationLow')}</div></div>`;
+            dashboardAlert.innerHTML = `<div class="alert alert-success"><i class="fas fa-check-circle"></i><div>${t('report.patientLow')}</div></div>`;
         }
     }
 }
@@ -1791,9 +1895,9 @@ function updatePatientReport() {
     if (reportDate) reportDate.textContent = formatDate(new Date());
     if (reportInterp) {
         const risk = AppState.analysisResults.risk;
-        if (risk === 'high') reportInterp.textContent = t('report.interpretationHigh');
-        else if (risk === 'medium') reportInterp.textContent = t('report.interpretationMedium');
-        else reportInterp.textContent = t('report.interpretationLow');
+        if (risk === 'high') reportInterp.textContent = t('report.patientHigh');
+        else if (risk === 'medium') reportInterp.textContent = t('report.patientMedium');
+        else reportInterp.textContent = t('report.patientLow');
     }
 }
 
@@ -1899,15 +2003,12 @@ function simulatePatientUpload(eye) {
     if (AppState.uploadedImages.od && AppState.uploadedImages.oi) {
         const result = document.getElementById('pUploadResult');
         if (result) result.style.display = 'block';
-        showAlert('success', t('alert.success'), t('msg.imagesLoaded'));
+        showToast('success', t('toast.success'), t('msg.imagesLoaded'));
     } else {
-        showAlert('info', t('alert.info'), t('msg.imageLoaded'));
+        showToast('info', t('toast.info'), t('msg.imageLoaded'));
     }
 }
 
-// ============================================================
-// AI logic based on IOP and Age
-// ============================================================
 function calculateAnalysisFromPatient(patient) {
     const pioOd = patient.pioOd || 16;
     const pioOi = patient.pioOi || 16;
@@ -1976,15 +2077,15 @@ function simulatePatientAnalysis() {
                 </button>
             </div>
         `;
-        showAlert('success', t('msg.analysisComplete'), t('msg.analysisCompleteDesc'));
+        showToast('success', t('msg.analysisComplete'), t('msg.analysisSaved'));
     }, 3000);
 }
 
 function addToHistory(patientData, results) {
     AppState.analysisCounter++;
-    AppState.history.push({
+    AppState.history.unshift({
         id: AppState.analysisCounter,
-        patientName: `${patientData.name} ${patientData.lastName}`,
+        patientName: `${patientData.lastName} ${patientData.name}`,
         patientDni: patientData.dni,
         age: getAge(patientData.birthDate),
         date: new Date().toISOString().split('T')[0],
@@ -1998,7 +2099,7 @@ function addToHistory(patientData, results) {
 function generatePatientPDF() {
     const content = document.getElementById('patientReportContent');
     if (!content) return;
-    showAlert('confirm', t('alert.confirm'), t('msg.generateReportConfirm'), () => {
+    showConfirm(t('confirm.reportTitle'), t('confirm.reportMessage'), () => {
         html2canvas(content, { scale: 2, useCORS: true, backgroundColor: '#ffffff' }).then(canvas => {
             const imgData = canvas.toDataURL('image/png');
             const { jsPDF } = window.jspdf;
@@ -2007,7 +2108,7 @@ function generatePatientPDF() {
             const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
             pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
             pdf.save('reporte_paciente_glaucoia.pdf');
-            showAlert('success', t('alert.success'), t('msg.reportGenerated'));
+            showToast('success', t('toast.success'), t('msg.reportGenerated'));
         });
     });
 }
@@ -2063,19 +2164,27 @@ function updateDoctorStats() {
 
     const tableBody = document.getElementById('recentPatientsTable');
     if (tableBody) {
-        const recent = AppState.history.slice(-5).reverse();
+        const recent = AppState.history.slice(0, 5);
         if (recent.length === 0) {
             tableBody.innerHTML = `<tr><td colspan="5" style="text-align:center; color:var(--text-muted); padding:20px;">${t('doctor.history.noRecords')}</td></tr>`;
         } else {
-            tableBody.innerHTML = recent.map(h => `
-                <tr>
-                    <td><b>${h.patientName}</b></td>
-                    <td>${h.age}</td>
-                    <td>${formatDateShort(h.date)}</td>
-                    <td><span class="badge ${getRiskBadge(h.risk)}">${getRiskLabel(h.risk)}</span></td>
-                    <td><button class="btn btn-sm btn-secondary" onclick="viewHistoryByDni('${h.patientDni}')">${t('doctor.dashboard.view')}</button></td>
-                </tr>
-            `).join('');
+            tableBody.innerHTML = recent.map(h => {
+                const parts = splitFullName(h.patientName);
+                return `
+                    <tr>
+                        <td>
+                            <div class="patient-name-cell">
+                                <span class="p-lastnames">${parts.lastNames}</span>
+                                <span class="p-firstnames">${parts.firstNames}</span>
+                            </div>
+                        </td>
+                        <td>${h.age}</td>
+                        <td>${formatDateShort(h.date)}</td>
+                        <td><span class="badge ${getRiskBadge(h.risk)}">${getRiskLabel(h.risk)}</span></td>
+                        <td><button class="btn-icon edit" title="${t('doctor.dashboard.view')}" onclick="viewHistoryByDni('${h.patientDni}')"><i class="fas fa-eye"></i></button></td>
+                    </tr>
+                `;
+            }).join('');
         }
     }
 }
@@ -2085,110 +2194,146 @@ function viewHistoryByDni(dni) {
     if (idx >= 0) viewHistoryDetail(idx);
 }
 
+// ============================================================
+// Registered Patients Panel
+// ============================================================
+function openRegisteredPatientsPanel() {
+    AppState.patientsSearchTerm = '';
+    AppState.patientsCurrentPage = 1;
+    showDoctorPanel('dpanel-registered');
+    const searchInput = document.getElementById('registeredSearch');
+    if (searchInput) searchInput.value = '';
+    updateRegisteredPatientsTable();
+}
+
+function onRegisteredSearch(value) {
+    AppState.patientsSearchTerm = (value || '').toLowerCase();
+    AppState.patientsCurrentPage = 1;
+    updateRegisteredPatientsTable();
+}
+
+function getFilteredSortedPatients() {
+    let list = sortPatientsByLastName(AppState.patients);
+    if (AppState.patientsSearchTerm) {
+        const q = AppState.patientsSearchTerm;
+        list = list.filter(p =>
+            p.name.toLowerCase().includes(q) ||
+            p.lastName.toLowerCase().includes(q) ||
+            p.dni.includes(q)
+        );
+    }
+    return list;
+}
+
 function updateRegisteredPatientsTable() {
     const tbody = document.getElementById('registeredPatientsTable');
+    const pagination = document.getElementById('patientsPagination');
     if (!tbody) return;
 
-    if (AppState.patients.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color:var(--text-muted); padding:20px;">${t('doctor.registeredPatients.noPatients')}</td></tr>`;
-        return;
-    }
+    const list = getFilteredSortedPatients();
+    const total = list.length;
+    const perPage = AppState.patientsPerPage;
+    const totalPages = Math.max(1, Math.ceil(total / perPage));
 
-    tbody.innerHTML = AppState.patients.map(p => `
-        <tr>
-            <td><b>${p.name} ${p.lastName}</b></td>
-            <td>${p.dni}</td>
-            <td>${p.age}</td>
-            <td>${p.pioOd || '-'} mmHg</td>
-            <td>${p.pioOi || '-'} mmHg</td>
-            <td>
-                <div class="table-actions">
-                    <button class="btn btn-sm btn-secondary" onclick="viewPatientFromDashboard(${p.id})">${t('doctor.dashboard.view')}</button>
-                    <button class="btn btn-sm btn-outline-primary" onclick="openEditPatientModal(${p.id})">${t('doctor.dashboard.edit')}</button>
-                </div>
-            </td>
-        </tr>
-    `).join('');
-}
+    if (AppState.patientsCurrentPage > totalPages) AppState.patientsCurrentPage = totalPages;
+    if (AppState.patientsCurrentPage < 1) AppState.patientsCurrentPage = 1;
 
-function filterRegisteredPatients() {
-    const searchEl = document.getElementById('registeredSearch');
-    if (!searchEl) return;
-    const search = searchEl.value.toLowerCase();
-    const rows = document.querySelectorAll('#registeredPatientsTable tr');
-    rows.forEach(row => {
-        row.style.display = row.textContent.toLowerCase().includes(search) ? '' : 'none';
-    });
-}
+    const start = (AppState.patientsCurrentPage - 1) * perPage;
+    const end = start + perPage;
+    const pageItems = list.slice(start, end);
 
-function clearNewPatientForm() {
-    ['docName', 'docLastName', 'docDni', 'docBirth', 'docPassword'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.value = '';
-    });
-    const pioOdEl = document.getElementById('docPioOd');
-    const pioOiEl = document.getElementById('docPioOi');
-    if (pioOdEl) pioOdEl.value = '16';
-    if (pioOiEl) pioOiEl.value = '16';
-    const pwToggle = document.querySelector('#docPassword ~ .password-toggle');
-    const pwInput = document.getElementById('docPassword');
-    if (pwInput) pwInput.type = 'password';
-    if (pwToggle) pwToggle.innerHTML = '<i class="fas fa-eye"></i>';
-    showDoctorPanel('dpanel-dash');
-}
-
-function saveNewPatient() {
-    const nameEl = document.getElementById('docName');
-    const lastNameEl = document.getElementById('docLastName');
-    const dniEl = document.getElementById('docDni');
-    const birthEl = document.getElementById('docBirth');
-    const pioOdEl = document.getElementById('docPioOd');
-    const pioOiEl = document.getElementById('docPioOi');
-    const passwordEl = document.getElementById('docPassword');
-    if (!nameEl || !lastNameEl || !dniEl || !birthEl || !passwordEl) return;
-
-    const name = nameEl.value.trim();
-    const lastName = lastNameEl.value.trim();
-    const dni = dniEl.value.trim();
-    const birthDate = birthEl.value;
-    const pioOd = parseInt(pioOdEl.value) || 16;
-    const pioOi = parseInt(pioOiEl.value) || 16;
-    const password = passwordEl.value.trim();
-
-    if (!name || !lastName || !dni || !birthDate || !password) {
-        showAlert('warning', t('alert.warning'), t('msg.completeFields'));
-        return;
-    }
-
-    const age = getAge(birthDate);
-    let patient = AppState.patients.find(p => p.dni === dni);
-    let isUpdate = false;
-
-    if (patient) {
-        patient.name = name;
-        patient.lastName = lastName;
-        patient.birthDate = birthDate;
-        patient.age = age;
-        patient.pioOd = pioOd;
-        patient.pioOi = pioOi;
-        patient.password = password;
-        isUpdate = true;
+    if (total === 0) {
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--text-muted); padding:20px;">${t('doctor.registeredPatients.noPatients')}</td></tr>`;
     } else {
-        patient = {
-            id: AppState.patients.length + 1, name, lastName, dni, birthDate, age,
-            pioOd, pioOi, password, analyses: []
-        };
-        AppState.patients.push(patient);
+        tbody.innerHTML = pageItems.map(p => {
+            const isActive = p.status !== 'inactive';
+            const actionIcon = isActive ? 'fa-user-slash' : 'fa-user-check';
+            const actionClass = isActive ? 'deactivate' : 'activate';
+            const actionTitle = isActive ? t('status.inactive') : t('status.active');
+            return `
+                <tr>
+                    <td>
+                        <div class="patient-name-cell">
+                            <span class="p-lastnames">${p.lastName}</span>
+                            <span class="p-firstnames">${p.name}</span>
+                        </div>
+                    </td>
+                    <td>${p.dni}</td>
+                    <td>${p.age}</td>
+                    <td>${p.pioOd || '-'} mmHg</td>
+                    <td>${p.pioOi || '-'} mmHg</td>
+                    <td><span class="${getStatusBadge(p.status)}">${getStatusLabel(p.status)}</span></td>
+                    <td>
+                        <div class="table-actions">
+                            <button class="btn-icon edit" title="${t('doctor.dashboard.edit')}" onclick="openEditPatientModal(${p.id})"><i class="fas fa-pen"></i></button>
+                            <button class="btn-icon ${actionClass}" title="${actionTitle}" onclick="togglePatientStatus(${p.id})"><i class="fas ${actionIcon}"></i></button>
+                        </div>
+                    </td>
+                </tr>
+            `;
+        }).join('');
     }
 
+    if (pagination) {
+        if (total === 0) {
+            pagination.innerHTML = '';
+            return;
+        }
+        let html = '';
+        html += `<button class="pagination-btn" ${AppState.patientsCurrentPage === 1 ? 'disabled' : ''} onclick="goToPatientsPage(${AppState.patientsCurrentPage - 1})"><i class="fas fa-chevron-left"></i></button>`;
+
+        const maxButtons = 7;
+        let startPage = Math.max(1, AppState.patientsCurrentPage - Math.floor(maxButtons / 2));
+        let endPage = Math.min(totalPages, startPage + maxButtons - 1);
+        if (endPage - startPage < maxButtons - 1) {
+            startPage = Math.max(1, endPage - maxButtons + 1);
+        }
+
+        if (startPage > 1) {
+            html += `<button class="pagination-btn" onclick="goToPatientsPage(1)">1</button>`;
+            if (startPage > 2) html += `<span class="pagination-info">...</span>`;
+        }
+
+        for (let i = startPage; i <= endPage; i++) {
+            html += `<button class="pagination-btn ${i === AppState.patientsCurrentPage ? 'active' : ''}" onclick="goToPatientsPage(${i})">${i}</button>`;
+        }
+
+        if (endPage < totalPages) {
+            if (endPage < totalPages - 1) html += `<span class="pagination-info">...</span>`;
+            html += `<button class="pagination-btn" onclick="goToPatientsPage(${totalPages})">${totalPages}</button>`;
+        }
+
+        html += `<button class="pagination-btn" ${AppState.patientsCurrentPage === totalPages ? 'disabled' : ''} onclick="goToPatientsPage(${AppState.patientsCurrentPage + 1})"><i class="fas fa-chevron-right"></i></button>`;
+        html += `<span class="pagination-info">${t('doctor.registeredPatients.showing')} ${start + 1}-${Math.min(end, total)} ${t('doctor.registeredPatients.of')} ${total} ${t('doctor.registeredPatients.patients')}</span>`;
+
+        pagination.innerHTML = html;
+    }
+}
+
+function goToPatientsPage(page) {
+    const list = getFilteredSortedPatients();
+    const totalPages = Math.max(1, Math.ceil(list.length / AppState.patientsPerPage));
+    if (page < 1 || page > totalPages) return;
+    AppState.patientsCurrentPage = page;
+    updateRegisteredPatientsTable();
+}
+
+// ============================================================
+// Toggle Status (baja lógica)
+// ============================================================
+function togglePatientStatus(patientId) {
+    const p = AppState.patients.find(pt => pt.id === patientId);
+    if (!p) return;
+    p.status = p.status === 'inactive' ? 'active' : 'inactive';
     persistAppState();
     updateRegisteredPatientsTable();
     updateDoctorStats();
-    showAlert('success', t('alert.success'), isUpdate ? t('msg.patientUpdated') : t('msg.patientRegistered'));
-    clearNewPatientForm();
+    showToast('success', t('toast.success'), t('msg.statusChanged'));
 }
 
-// Edit patient modal (doctor only)
+// ============================================================
+// Edit Patient Modal
+// ============================================================
 function openEditPatientModal(patientId) {
     const p = AppState.patients.find(pt => pt.id === patientId);
     if (!p) return;
@@ -2198,7 +2343,7 @@ function openEditPatientModal(patientId) {
 
     const modal = document.createElement('div');
     modal.id = 'editPatientModal';
-    modal.className = 'auth-modal open';
+    modal.className = 'auth-modal open wide-modal';
     modal.innerHTML = `
         <div class="auth-modal-content">
             <div class="auth-modal-header">
@@ -2255,13 +2400,18 @@ function saveEditedPatient(patientId) {
     const password = document.getElementById('editPassword').value.trim();
 
     if (!name || !lastName || !dni || !birthDate) {
-        showAlert('warning', t('alert.warning'), t('msg.completeFields'));
+        showToast('warning', t('toast.warning'), t('msg.completeFields'));
+        return;
+    }
+
+    if (lastName.trim().split(/\s+/).length < 2) {
+        showToast('warning', t('toast.warning'), t('msg.lastNamesRequired'));
         return;
     }
 
     const dniTaken = AppState.patients.some(pt => pt.dni === dni && pt.id !== patientId);
     if (dniTaken) {
-        showAlert('danger', t('alert.danger'), t('msg.dniExists'));
+        showToast('danger', t('toast.danger'), t('msg.dniExists'));
         return;
     }
 
@@ -2277,7 +2427,82 @@ function saveEditedPatient(patientId) {
     persistAppState();
     updateRegisteredPatientsTable();
     closeEditPatientModal();
-    showAlert('success', t('alert.success'), t('msg.patientUpdated'));
+    showToast('success', t('toast.success'), t('msg.patientUpdated'));
+}
+
+// ============================================================
+// New Patient
+// ============================================================
+function clearNewPatientForm() {
+    ['docName', 'docLastName', 'docDni', 'docBirth', 'docPassword'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.value = '';
+    });
+    const pioOdEl = document.getElementById('docPioOd');
+    const pioOiEl = document.getElementById('docPioOi');
+    if (pioOdEl) pioOdEl.value = '16';
+    if (pioOiEl) pioOiEl.value = '16';
+    const pwToggle = document.querySelector('#docPassword ~ .password-toggle');
+    const pwInput = document.getElementById('docPassword');
+    if (pwInput) pwInput.type = 'password';
+    if (pwToggle) pwToggle.innerHTML = '<i class="fas fa-eye"></i>';
+    showDoctorPanel('dpanel-dash');
+}
+
+function saveNewPatient() {
+    const nameEl = document.getElementById('docName');
+    const lastNameEl = document.getElementById('docLastName');
+    const dniEl = document.getElementById('docDni');
+    const birthEl = document.getElementById('docBirth');
+    const pioOdEl = document.getElementById('docPioOd');
+    const pioOiEl = document.getElementById('docPioOi');
+    const passwordEl = document.getElementById('docPassword');
+    if (!nameEl || !lastNameEl || !dniEl || !birthEl || !passwordEl) return;
+
+    const name = nameEl.value.trim();
+    const lastName = lastNameEl.value.trim();
+    const dni = dniEl.value.trim();
+    const birthDate = birthEl.value;
+    const pioOd = parseInt(pioOdEl.value) || 16;
+    const pioOi = parseInt(pioOiEl.value) || 16;
+    const password = passwordEl.value.trim();
+
+    if (!name || !lastName || !dni || !birthDate || !password) {
+        showToast('warning', t('toast.warning'), t('msg.completeFields'));
+        return;
+    }
+
+    if (lastName.split(/\s+/).length < 2) {
+        showToast('warning', t('toast.warning'), t('msg.lastNamesRequired'));
+        return;
+    }
+
+    const age = getAge(birthDate);
+    let patient = AppState.patients.find(p => p.dni === dni);
+    let isUpdate = false;
+
+    if (patient) {
+        patient.name = name;
+        patient.lastName = lastName;
+        patient.birthDate = birthDate;
+        patient.age = age;
+        patient.pioOd = pioOd;
+        patient.pioOi = pioOi;
+        patient.password = password;
+        isUpdate = true;
+    } else {
+        patient = {
+            id: AppState.patients.length + 1, name, lastName, dni, birthDate, age,
+            pioOd, pioOi, password, status: 'active', analyses: []
+        };
+        AppState.patients.push(patient);
+    }
+
+    persistAppState();
+    updateRegisteredPatientsTable();
+    updateDoctorStats();
+    showToast('success', t('toast.success'), isUpdate ? t('msg.patientUpdated') : t('msg.patientRegistered'));
+    clearNewPatientForm();
 }
 
 function showDoctorPanel(panelId) {
@@ -2293,17 +2518,36 @@ function showDoctorPanel(panelId) {
     if (panelId === 'dpanel-registered') updateRegisteredPatientsTable();
 }
 
+// ============================================================
+// New Analysis Flow
+// ============================================================
+function startNewAnalysisFlow() {
+    AppState.selectedPatientForAnalysis = null;
+    AppState.uploadedImages = { od: false, oi: false };
+    AppState.isAnalysisComplete = false;
+    AppState.viewingHistoricalAnalysis = false;
+    AppState.analysisResults = { probability: 0, cdRatio: 0, rnfl: 0, pio: 0, confidence: 0, risk: 'low' };
+    AppState.patientData = { name: '', lastName: '', dni: '', birthDate: '', age: 0, pioOd: 0, pioOi: 0 };
+    AppState.UIState.currentAnalysisStep = 1;
+
+    showDoctorPanel('dpanel-analysis');
+    resetAnalysis();
+}
+
 function viewPatientFromDashboard(patientId) {
     const patient = AppState.patients.find(p => p.id === patientId);
     if (!patient) return;
-    showDoctorPanel('dpanel-analysis');
-    resetAnalysis();
+    if (patient.status === 'inactive') {
+        showToast('warning', t('toast.warning'), t('msg.patientInactiveWarning'));
+        return;
+    }
+    startNewAnalysisFlow();
     selectPatientForAnalysis(patient);
     goToStep(1);
 }
 
 // ============================================================
-// Patient Search
+// Patient Search (Analysis)
 // ============================================================
 function searchPatients(query) {
     const results = document.getElementById('patientSearchResults');
@@ -2314,9 +2558,11 @@ function searchPatients(query) {
     }
     const q = query.toLowerCase();
     const matches = AppState.patients.filter(p =>
-        p.name.toLowerCase().includes(q) ||
-        p.lastName.toLowerCase().includes(q) ||
-        p.dni.includes(q)
+        p.status !== 'inactive' && (
+            p.name.toLowerCase().includes(q) ||
+            p.lastName.toLowerCase().includes(q) ||
+            p.dni.includes(q)
+        )
     );
     if (matches.length === 0) {
         results.innerHTML = `<div class="search-result-item" style="cursor:default; color:var(--text-muted);">${t('doctor.newAnalysis.noResults')}</div>`;
@@ -2328,8 +2574,8 @@ function searchPatients(query) {
             return `
                 <div class="search-result-item" onclick="selectPatientForAnalysisById(${p.id})">
                     <div class="patient-info">
-                        <strong>${p.name} ${p.lastName}</strong>
-                        <span>DNI: ${p.dni} · ${p.age} años</span>
+                        <strong>${p.lastName}</strong>
+                        <span>${p.name} · DNI: ${p.dni} · ${p.age} años</span>
                     </div>
                     ${badgeHtml}
                 </div>
@@ -2360,18 +2606,18 @@ function selectPatientForAnalysis(patient) {
         info.style.display = 'block';
         const nameEl = document.getElementById('selectedPatientName');
         const detailsEl = document.getElementById('selectedPatientDetails');
-        if (nameEl) nameEl.textContent = `${patient.name} ${patient.lastName}`;
+        if (nameEl) nameEl.textContent = `${patient.lastName} ${patient.name}`;
         if (detailsEl) detailsEl.textContent =
             `DNI: ${patient.dni} · ${patient.age} años · PIO OD: ${patient.pioOd} mmHg · PIO OI: ${patient.pioOi} mmHg`;
     }
 
     const input = document.getElementById('patientSearchInput');
-    if (input) input.value = `${patient.name} ${patient.lastName}`;
+    if (input) input.value = `${patient.lastName} ${patient.name}`;
 
     const header = document.getElementById('analysisPatientName');
-    if (header) header.textContent = `${t('doctor.newAnalysis.patient')}: ${patient.name} ${patient.lastName}`;
+    if (header) header.textContent = `${t('doctor.newAnalysis.patient')}: ${patient.lastName} ${patient.name}`;
 
-    showAlert('success', t('alert.success'), `${t('doctor.newAnalysis.patient')}: ${patient.name} ${patient.lastName}`);
+    showToast('success', t('toast.success'), `${t('doctor.newAnalysis.patient')}: ${patient.lastName} ${patient.name}`);
 }
 
 // ============================================================
@@ -2379,16 +2625,27 @@ function selectPatientForAnalysis(patient) {
 // ============================================================
 function goToStep(step) {
     if (step >= 2 && !AppState.selectedPatientForAnalysis) {
-        showAlert('warning', t('alert.warning'), t('msg.selectPatient'));
+        showToast('warning', t('toast.warning'), t('msg.selectPatient'));
         return;
     }
-    if (step >= 3 && (!AppState.uploadedImages.od || !AppState.uploadedImages.oi)) {
-        showAlert('warning', t('alert.warning'), t('msg.selectImages'));
+
+    // Validar imágenes solo si no estamos viendo un análisis histórico
+    if (step >= 3 && !AppState.viewingHistoricalAnalysis &&
+        (!AppState.uploadedImages.od || !AppState.uploadedImages.oi)) {
+        showToast('warning', t('toast.warning'), t('msg.selectImages'));
         return;
     }
+
+    // Si vamos al paso 3 desde un análisis histórico, no re-simular
+    if (step === 3 && AppState.viewingHistoricalAnalysis) {
+        // Ya tenemos resultados, saltar directo al 4
+        goToStep(4);
+        return;
+    }
+
     AppState.UIState.currentAnalysisStep = step;
     forceStepRender(step);
-    if (step === 3) startAnalysisSimulation();
+    if (step === 3 && !AppState.viewingHistoricalAnalysis) startAnalysisSimulation();
     if (step === 4) displayResults();
 }
 
@@ -2425,9 +2682,9 @@ function simulateUpload(eye) {
     statusEl.style.color = 'var(--success)';
     AppState.uploadedImages[eye] = true;
     if (AppState.uploadedImages.od && AppState.uploadedImages.oi) {
-        showAlert('success', t('alert.success'), t('msg.imagesLoaded'));
+        showToast('success', t('toast.success'), t('msg.imagesLoaded'));
     } else {
-        showAlert('info', t('alert.info'), t('msg.imageLoaded'));
+        showToast('info', t('toast.info'), t('msg.imageLoaded'));
     }
 }
 
@@ -2457,21 +2714,25 @@ function startAnalysisSimulation() {
     });
     setTimeout(() => {
         AppState.isAnalysisComplete = true;
-        const btn = document.getElementById('showResultsBtn');
-        if (btn) btn.style.display = 'inline-flex';
-        showAlert('success', t('msg.analysisComplete'), t('msg.analysisCompleteDesc'));
+        displayResults();
+        saveAnalysisResult(true);
+        goToStep(4);
+        showToast('success', t('msg.analysisComplete'), t('msg.analysisSaved'));
     }, 3500);
 }
 
 function displayResults() {
     const patient = AppState.selectedPatientForAnalysis || AppState.patientData;
-    const name = `${patient.name} ${patient.lastName}`;
+    const name = `${patient.lastName} ${patient.name}`;
     const age = patient.age || getAge(patient.birthDate);
 
-    const results = calculateAnalysisFromPatient(patient);
-    AppState.analysisResults = results;
+    if (!AppState.analysisResults.probability ||
+        !AppState.selectedPatientForAnalysis ||
+        AppState.selectedPatientForAnalysis.dni !== patient.dni) {
+        AppState.analysisResults = calculateAnalysisFromPatient(patient);
+    }
 
-    const { probability, cdRatio, rnfl, pio, confidence, risk } = results;
+    const { probability, cdRatio, rnfl, pio, confidence, risk } = AppState.analysisResults;
 
     const resultPatientName = document.getElementById('resultPatientName');
     const probText = document.getElementById('probText');
@@ -2507,34 +2768,72 @@ function displayResults() {
         else if (risk === 'medium') { interp.textContent = t('report.interpretationMedium'); interpBox.className = 'alert alert-warning'; }
         else { interp.textContent = t('report.interpretationLow'); interpBox.className = 'alert alert-success'; }
     }
+
+    updateGradcamContent(risk);
+}
+
+function updateGradcamContent(risk) {
+    const isHigh = risk === 'high' || risk === 'medium';
+
+    const odBadge = document.getElementById('gradcamOdBadge');
+    const oiBadge = document.getElementById('gradcamOiBadge');
+    const odDesc = document.getElementById('gradcamOdDesc');
+    const oiDesc = document.getElementById('gradcamOiDesc');
+    const interpText = document.getElementById('gradcamInterpretationText');
+
+    if (isHigh) {
+        if (odBadge) { odBadge.className = 'gradcam-badge high'; odBadge.textContent = t('gradcam.highActivation'); }
+        if (oiBadge) { oiBadge.className = 'gradcam-badge medium'; oiBadge.textContent = t('gradcam.mediumActivation'); }
+        if (odDesc) odDesc.textContent = t('gradcam.highOdDesc');
+        if (oiDesc) oiDesc.textContent = t('gradcam.highOiDesc');
+        if (interpText) interpText.textContent = t('gradcam.interpretationHigh');
+    } else {
+        if (odBadge) { odBadge.className = 'gradcam-badge low'; odBadge.textContent = t('gradcam.lowActivation'); }
+        if (oiBadge) { oiBadge.className = 'gradcam-badge low'; oiBadge.textContent = t('gradcam.lowActivation'); }
+        if (odDesc) odDesc.textContent = t('gradcam.lowOdDesc');
+        if (oiDesc) oiDesc.textContent = t('gradcam.lowOiDesc');
+        if (interpText) interpText.textContent = t('gradcam.interpretationLow');
+    }
 }
 
 // ============================================================
-// Save & Generate Report
+// Reload Images (para verificar si el paciente subió otras)
 // ============================================================
-function saveAndGenerateReport() {
-    saveAnalysisResult(true);
-    showAlert('confirm', t('alert.confirm'), t('msg.generateReportConfirm'), () => {
-        generateDoctorPDFWithImages();
-        setTimeout(() => { resetFullAnalysisFlow(); }, 800);
-    });
+function reloadImagesForVerification() {
+    showConfirm(
+        t('confirm.reloadImagesTitle'),
+        t('confirm.reloadImagesMessage'),
+        () => {
+            // Marcar que ya no estamos en modo histórico
+            AppState.viewingHistoricalAnalysis = false;
+            // Reiniciar imágenes
+            AppState.uploadedImages = { od: false, oi: false };
+            // Actualizar UI del paso 2
+            ['uploadOd', 'uploadOi'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.textContent = t('patient.upload.pending');
+                    el.style.color = '';
+                    const zone = el.closest('.upload-zone');
+                    if (zone) zone.classList.remove('uploaded');
+                }
+            });
+            goToStep(2);
+            showToast('info', t('toast.info'), t('msg.imagesReset'));
+        }
+    );
 }
 
+// ============================================================
+// Save Analysis (auto)
+// ============================================================
 function saveAnalysisResult(silent = false) {
     const patient = AppState.selectedPatientForAnalysis || AppState.patientData;
+    if (!patient || !patient.dni) return;
     const dni = patient.dni;
 
     let existingPatient = AppState.patients.find(p => p.dni === dni);
-    if (!existingPatient) {
-        existingPatient = {
-            id: AppState.patients.length + 1, name: patient.name, lastName: patient.lastName,
-            dni: dni, birthDate: patient.birthDate || '1970-01-01',
-            age: patient.age || getAge(patient.birthDate),
-            pioOd: patient.pioOd || 16, pioOi: patient.pioOi || 16,
-            password: '123456', analyses: []
-        };
-        AppState.patients.push(existingPatient);
-    }
+    if (!existingPatient) return;
 
     const analysis = {
         date: new Date().toISOString().split('T')[0],
@@ -2554,81 +2853,25 @@ function saveAnalysisResult(silent = false) {
     updateDoctorStats();
     updateHistoryTable();
 
-    if (!silent) showAlert('success', t('alert.success'), t('msg.analysisReset'));
+    if (!silent) showToast('success', t('toast.success'), t('msg.analysisSaved'));
 }
 
-function resetFullAnalysisFlow() {
-    AppState.selectedPatientForAnalysis = null;
-    AppState.uploadedImages = { od: false, oi: false };
-    AppState.isAnalysisComplete = false;
-    AppState.analysisResults = { probability: 0, cdRatio: 0, rnfl: 0, pio: 0, confidence: 0, risk: 'low' };
-    AppState.patientData = { name: '', lastName: '', dni: '', birthDate: '', age: 0, pioOd: 0, pioOi: 0 };
-    AppState.UIState.currentAnalysisStep = 1;
-
-    showDoctorPanel('dpanel-analysis');
-    resetAnalysis();
-    showAlert('success', t('alert.success'), t('msg.analysisReset'));
+// ============================================================
+// Generate Report + Reset Flow
+// ============================================================
+function generateReportOnly() {
+    showConfirm(t('confirm.reportTitle'), t('confirm.reportMessage'), () => {
+        generateDoctorPDFWithImages(() => {
+            setTimeout(() => {
+                startNewAnalysisFlow();
+            }, 500);
+        });
+    });
 }
 
-function resetAnalysis() {
-    AppState.uploadedImages = { od: false, oi: false };
-    AppState.isAnalysisComplete = false;
-    AppState.UIState.currentAnalysisStep = 1;
-
-    document.querySelectorAll('.step-content').forEach(el => {
-        el.classList.remove('active');
-        el.style.display = 'none';
-    });
-    document.querySelectorAll('.step-item').forEach(el => el.classList.remove('active', 'done'));
-    document.querySelectorAll('.step-connector').forEach(el => el.classList.remove('active', 'done'));
-
-    const step1 = document.querySelector('.step-item[data-step="1"]');
-    if (step1) step1.classList.add('active');
-
-    const dstep1 = document.getElementById('dstep1');
-    if (dstep1) { dstep1.style.display = 'block'; dstep1.classList.add('active'); }
-
-    ['uploadOd', 'uploadOi'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.textContent = t('patient.upload.pending');
-            el.style.color = '';
-            const zone = el.closest('.upload-zone');
-            if (zone) zone.classList.remove('uploaded');
-        }
-    });
-
-    const btn = document.getElementById('showResultsBtn');
-    if (btn) btn.style.display = 'none';
-
-    const labels = [
-        'Pre-procesamiento de imagen',
-        'Segmentación del disco óptico',
-        'Extracción de características morfológicas',
-        'Clasificación por modelo ResNet-50',
-        'Generación de mapa de atención'
-    ];
-    ['procStep1', 'procStep2', 'procStep3', 'procStep4', 'procStep5'].forEach((id, i) => {
-        const el = document.getElementById(id);
-        if (el) {
-            el.className = 'processing-step pending';
-            el.innerHTML = `<i class="far fa-circle"></i> ${labels[i]}`;
-        }
-    });
-
-    const searchInput = document.getElementById('patientSearchInput');
-    if (searchInput) searchInput.value = '';
-    const selectedInfo = document.getElementById('selectedPatientInfo');
-    if (selectedInfo) selectedInfo.style.display = 'none';
-    const searchResults = document.getElementById('patientSearchResults');
-    if (searchResults) searchResults.classList.remove('open');
-    const header = document.getElementById('analysisPatientName');
-    if (header) header.textContent = '';
-}
-
-function generateDoctorPDFWithImages() {
+function generateDoctorPDFWithImages(onComplete) {
     const patient = AppState.selectedPatientForAnalysis || AppState.patientData;
-    const name = `${patient.name} ${patient.lastName}`;
+    const name = `${patient.lastName} ${patient.name}`;
     const age = patient.age || getAge(patient.birthDate);
     const prob = AppState.analysisResults.probability;
     const cd = AppState.analysisResults.cdRatio;
@@ -2697,38 +2940,182 @@ function generateDoctorPDFWithImages() {
         pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
         pdf.save('reporte_clinico_glaucoia.pdf');
         document.body.removeChild(reportHtml);
-        showAlert('success', t('alert.success'), t('msg.reportGenerated'));
+        showToast('success', t('toast.success'), t('msg.reportGenerated'));
+        if (typeof onComplete === 'function') onComplete();
     }).catch(() => {
         document.body.removeChild(reportHtml);
-        showAlert('danger', t('alert.danger'), 'Error al generar PDF');
+        showToast('danger', t('toast.danger'), 'Error al generar PDF');
     });
 }
 
 // ============================================================
-// History
+// Reset Analysis
 // ============================================================
-function updateHistoryTable() {
-    const tbody = document.getElementById('historyTableBody');
-    if (!tbody) return;
+function resetAnalysis() {
+    AppState.uploadedImages = { od: false, oi: false };
+    AppState.isAnalysisComplete = false;
+    AppState.UIState.currentAnalysisStep = 1;
 
-    if (AppState.history.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color: var(--text-muted); font-size:16px; padding:24px;">${t('doctor.history.noRecords')}</td></tr>`;
-        return;
-    }
+    document.querySelectorAll('.step-content').forEach(el => {
+        el.classList.remove('active');
+        el.style.display = 'none';
+    });
+    document.querySelectorAll('.step-item').forEach(el => el.classList.remove('active', 'done'));
+    document.querySelectorAll('.step-connector').forEach(el => el.classList.remove('active', 'done'));
 
-    tbody.innerHTML = AppState.history.map((h, index) => `
-        <tr>
-            <td>${h.id}</td>
-            <td><b>${h.patientName}</b></td>
-            <td>${h.age}</td>
-            <td>${formatDateShort(h.date)}</td>
-            <td>${h.cdRatio}</td>
-            <td><span class="badge ${getRiskBadge(h.risk)}">${getRiskLabel(h.risk)}</span></td>
-            <td><button class="btn btn-sm btn-secondary" onclick="viewHistoryDetail(${index})">${t('doctor.dashboard.view')}</button></td>
-        </tr>
-    `).join('');
+    const step1 = document.querySelector('.step-item[data-step="1"]');
+    if (step1) step1.classList.add('active');
+
+    const dstep1 = document.getElementById('dstep1');
+    if (dstep1) { dstep1.style.display = 'block'; dstep1.classList.add('active'); }
+
+    ['uploadOd', 'uploadOi'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.textContent = t('patient.upload.pending');
+            el.style.color = '';
+            const zone = el.closest('.upload-zone');
+            if (zone) zone.classList.remove('uploaded');
+        }
+    });
+
+    const labels = [
+        'Pre-procesamiento de imagen',
+        'Segmentación del disco óptico',
+        'Extracción de características morfológicas',
+        'Clasificación por modelo ResNet-50',
+        'Generación de mapa de atención'
+    ];
+    ['procStep1', 'procStep2', 'procStep3', 'procStep4', 'procStep5'].forEach((id, i) => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.className = 'processing-step pending';
+            el.innerHTML = `<i class="far fa-circle"></i> ${labels[i]}`;
+        }
+    });
+
+    const searchInput = document.getElementById('patientSearchInput');
+    if (searchInput) searchInput.value = '';
+    const selectedInfo = document.getElementById('selectedPatientInfo');
+    if (selectedInfo) selectedInfo.style.display = 'none';
+    const searchResults = document.getElementById('patientSearchResults');
+    if (searchResults) searchResults.classList.remove('open');
+    const header = document.getElementById('analysisPatientName');
+    if (header) header.textContent = '';
 }
 
+// ============================================================
+// History (con filtro funcional)
+// ============================================================
+function onHistorySearch(value) {
+    AppState.historySearchTerm = (value || '').toLowerCase();
+    AppState.historyPage = 1;
+    updateHistoryTable();
+}
+
+function onHistoryFilterChange(value) {
+    AppState.historyRiskFilter = value;
+    AppState.historyPage = 1;
+    updateHistoryTable();
+}
+
+function getFilteredHistory() {
+    let list = AppState.history;
+    if (AppState.historyRiskFilter && AppState.historyRiskFilter !== 'all') {
+        list = list.filter(h => h.risk === AppState.historyRiskFilter);
+    }
+    if (AppState.historySearchTerm) {
+        const q = AppState.historySearchTerm;
+        list = list.filter(h =>
+            h.patientName.toLowerCase().includes(q) ||
+            String(h.id).includes(q)
+        );
+    }
+    return list;
+}
+
+function updateHistoryTable() {
+    const tbody = document.getElementById('historyTableBody');
+    const pagination = document.getElementById('historyPagination');
+    if (!tbody) return;
+
+    const list = getFilteredHistory();
+    const total = list.length;
+    const perPage = 10;
+    const totalPages = Math.max(1, Math.ceil(total / perPage));
+
+    if (AppState.historyPage > totalPages) AppState.historyPage = totalPages;
+    if (AppState.historyPage < 1) AppState.historyPage = 1;
+
+    const start = (AppState.historyPage - 1) * perPage;
+    const end = start + perPage;
+    const pageItems = list.slice(start, end);
+
+    if (total === 0) {
+        const msg = (AppState.historySearchTerm || AppState.historyRiskFilter !== 'all')
+            ? t('doctor.history.noFilterResults')
+            : t('doctor.history.noRecords');
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align:center; color: var(--text-muted); font-size:16px; padding:24px;">${msg}</td></tr>`;
+    } else {
+        tbody.innerHTML = pageItems.map((h) => {
+            // Encontrar índice real en AppState.history (para viewHistoryDetail)
+            const realIndex = AppState.history.indexOf(h);
+            const parts = splitFullName(h.patientName);
+            return `
+                <tr>
+                    <td>${h.id}</td>
+                    <td>
+                        <div class="patient-name-cell">
+                            <span class="p-lastnames">${parts.lastNames}</span>
+                            <span class="p-firstnames">${parts.firstNames}</span>
+                        </div>
+                    </td>
+                    <td>${h.age}</td>
+                    <td>${formatDateShort(h.date)}</td>
+                    <td>${h.cdRatio}</td>
+                    <td><span class="badge ${getRiskBadge(h.risk)}">${getRiskLabel(h.risk)}</span></td>
+                    <td><button class="btn-icon edit" title="${t('doctor.dashboard.view')}" onclick="viewHistoryDetail(${realIndex})"><i class="fas fa-eye"></i></button></td>
+                </tr>
+            `;
+        }).join('');
+    }
+
+    if (pagination) {
+        if (total === 0) { pagination.innerHTML = ''; return; }
+        let html = '';
+        html += `<button class="pagination-btn" ${AppState.historyPage === 1 ? 'disabled' : ''} onclick="goToHistoryPage(${AppState.historyPage - 1})"><i class="fas fa-chevron-left"></i></button>`;
+        const maxButtons = 7;
+        let sp = Math.max(1, AppState.historyPage - Math.floor(maxButtons / 2));
+        let ep = Math.min(totalPages, sp + maxButtons - 1);
+        if (ep - sp < maxButtons - 1) sp = Math.max(1, ep - maxButtons + 1);
+        if (sp > 1) {
+            html += `<button class="pagination-btn" onclick="goToHistoryPage(1)">1</button>`;
+            if (sp > 2) html += `<span class="pagination-info">...</span>`;
+        }
+        for (let i = sp; i <= ep; i++) {
+            html += `<button class="pagination-btn ${i === AppState.historyPage ? 'active' : ''}" onclick="goToHistoryPage(${i})">${i}</button>`;
+        }
+        if (ep < totalPages) {
+            if (ep < totalPages - 1) html += `<span class="pagination-info">...</span>`;
+            html += `<button class="pagination-btn" onclick="goToHistoryPage(${totalPages})">${totalPages}</button>`;
+        }
+        html += `<button class="pagination-btn" ${AppState.historyPage === totalPages ? 'disabled' : ''} onclick="goToHistoryPage(${AppState.historyPage + 1})"><i class="fas fa-chevron-right"></i></button>`;
+        html += `<span class="pagination-info">${start + 1}-${Math.min(end, total)} ${t('doctor.registeredPatients.of')} ${total}</span>`;
+        pagination.innerHTML = html;
+    }
+}
+
+function goToHistoryPage(page) {
+    const list = getFilteredHistory();
+    const totalPages = Math.max(1, Math.ceil(list.length / 10));
+    if (page < 1 || page > totalPages) return;
+    AppState.historyPage = page;
+    updateHistoryTable();
+}
+
+// ============================================================
+// View history detail
+// ============================================================
 function viewHistoryDetail(index) {
     const h = AppState.history[index];
     if (!h) return;
@@ -2744,41 +3131,38 @@ function viewHistoryDetail(index) {
             birthDate: patient.birthDate, age: patient.age,
             pioOd: patient.pioOd || 16, pioOi: patient.pioOi || 16
         };
-        AppState.analysisResults = {
-            probability: h.probability, cdRatio: h.cdRatio, rnfl: h.rnfl || 68,
-            pio: h.pio || patient.pioOd || 16, confidence: h.confidence || 91, risk: h.risk
+    } else {
+        // Paciente no encontrado, usar datos del historial
+        AppState.selectedPatientForAnalysis = {
+            id: -1, name: h.patientName, lastName: '', dni: h.patientDni,
+            birthDate: '', age: h.age, pioOd: h.pio, pioOi: h.pio,
+            status: 'active'
         };
-        showDoctorPanel('dpanel-analysis');
-        AppState.UIState.currentAnalysisStep = 4;
-        forceStepRender(4);
-        displayResults();
+        AppState.patientData = {
+            name: h.patientName, lastName: '', dni: h.patientDni,
+            birthDate: '', age: h.age, pioOd: h.pio, pioOi: h.pio
+        };
     }
-}
 
-function filterHistory() {
-    const searchEl = document.getElementById('historySearch');
-    const filterEl = document.getElementById('historyFilter');
-    if (!searchEl || !filterEl) return;
+    AppState.analysisResults = {
+        probability: h.probability, cdRatio: h.cdRatio, rnfl: h.rnfl || 68,
+        pio: h.pio || 16, confidence: h.confidence || 91, risk: h.risk
+    };
 
-    const search = searchEl.value.toLowerCase();
-    const filter = filterEl.value;
-    const rows = document.querySelectorAll('#historyTableBody tr');
-    rows.forEach(row => {
-        const text = row.textContent.toLowerCase();
-        const riskCell = row.querySelector('.badge');
-        const riskText = riskCell ? riskCell.textContent.toLowerCase() : '';
-        let show = true;
-        if (search && !text.includes(search)) show = false;
-        if (filter !== 'all') {
-            const riskMap = { 'high': 'riesgo alto', 'medium': 'riesgo medio', 'low': 'riesgo bajo' };
-            if (!riskText.includes(riskMap[filter])) show = false;
-        }
-        row.style.display = show ? '' : 'none';
-    });
+    // Marcar que estamos viendo un análisis histórico (ya tiene imágenes "cargadas")
+    AppState.viewingHistoricalAnalysis = true;
+    AppState.uploadedImages = { od: true, oi: true };
+    AppState.isAnalysisComplete = true;
+
+    showDoctorPanel('dpanel-analysis');
+    AppState.UIState.currentAnalysisStep = 4;
+    forceStepRender(4);
+    displayResults();
+    showToast('info', t('toast.info'), t('msg.recordLoadedAdvance'));
 }
 
 // ============================================================
-// Profile Editing (patient: no PIO edit)
+// Profile Editing
 // ============================================================
 function openProfileModal(userType) {
     const user = AppState.currentUser;
@@ -2828,7 +3212,7 @@ function showProfileModal(config) {
 
     const modal = document.createElement('div');
     modal.id = 'profileModal';
-    modal.className = 'auth-modal open';
+    modal.className = 'auth-modal open wide-modal';
     modal.innerHTML = `
         <div class="auth-modal-content">
             <div class="auth-modal-header">
@@ -2836,7 +3220,7 @@ function showProfileModal(config) {
                 <button class="auth-modal-close" onclick="closeProfileModal()"><i class="fas fa-times"></i></button>
             </div>
             <div class="auth-modal-body">
-                <div class="form-grid" style="grid-template-columns: 1fr;">${fieldsHtml}</div>
+                <div class="form-grid" style="grid-template-columns: 1fr 1fr;">${fieldsHtml}</div>
             </div>
             <div class="auth-modal-footer" style="display:flex; gap:10px; justify-content:center;">
                 <button class="btn btn-secondary" onclick="closeProfileModal()">${t('profile.cancel')}</button>
@@ -2862,7 +3246,7 @@ function saveProfile(type) {
     inputs.forEach(input => { values[input.dataset.key] = input.value.trim(); });
 
     if (!values.name || !values.lastName || !values.dni) {
-        showAlert('warning', t('alert.warning'), t('msg.completeFields'));
+        showToast('warning', t('toast.warning'), t('msg.completeFields'));
         return;
     }
 
@@ -2871,7 +3255,7 @@ function saveProfile(type) {
         const p = AppState.patients.find(pt => pt.dni === oldDni);
         if (!p) return;
         const dniTaken = AppState.patients.some(pt => pt.dni === values.dni && pt.dni !== oldDni);
-        if (dniTaken) { showAlert('danger', t('alert.danger'), t('msg.dniExists')); return; }
+        if (dniTaken) { showToast('danger', t('toast.danger'), t('msg.dniExists')); return; }
 
         p.name = values.name;
         p.lastName = values.lastName;
@@ -2893,13 +3277,13 @@ function saveProfile(type) {
         persistAppState();
         closeProfileModal();
         renderPatientPortalPreservingState();
-        showAlert('success', t('alert.success'), t('msg.profileUpdated'));
+        showToast('success', t('toast.success'), t('msg.profileUpdated'));
     } else {
         const oldDni = AppState.currentUser.dni;
         const d = AppState.doctors.find(doc => doc.dni === oldDni);
         if (!d) return;
         const dniTaken = AppState.doctors.some(doc => doc.dni === values.dni && doc.dni !== oldDni);
-        if (dniTaken) { showAlert('danger', t('alert.danger'), t('msg.dniExists')); return; }
+        if (dniTaken) { showToast('danger', t('toast.danger'), t('msg.dniExists')); return; }
 
         d.name = values.name;
         d.lastName = values.lastName;
@@ -2915,7 +3299,7 @@ function saveProfile(type) {
         persistAppState();
         closeProfileModal();
         renderDoctorPortalPreservingState();
-        showAlert('success', t('alert.success'), t('msg.profileUpdated'));
+        showToast('success', t('toast.success'), t('msg.profileUpdated'));
     }
 }
 
@@ -2979,16 +3363,16 @@ function renderDoctorPortalPreservingState() {
         const input = document.getElementById('patientSearchInput');
         const info = document.getElementById('selectedPatientInfo');
         const header = document.getElementById('analysisPatientName');
-        if (input) input.value = `${p.name} ${p.lastName}`;
+        if (input) input.value = `${p.lastName} ${p.name}`;
         if (info) {
             info.style.display = 'block';
             const nameEl = document.getElementById('selectedPatientName');
             const detailsEl = document.getElementById('selectedPatientDetails');
-            if (nameEl) nameEl.textContent = `${p.name} ${p.lastName}`;
+            if (nameEl) nameEl.textContent = `${p.lastName} ${p.name}`;
             if (detailsEl) detailsEl.textContent =
                 `DNI: ${p.dni} · ${p.age} años · PIO OD: ${p.pioOd} mmHg · PIO OI: ${p.pioOi} mmHg`;
         }
-        if (header) header.textContent = `${t('doctor.newAnalysis.patient')}: ${p.name} ${p.lastName}`;
+        if (header) header.textContent = `${t('doctor.newAnalysis.patient')}: ${p.lastName} ${p.name}`;
     }
 
     forceStepRender(step);
@@ -3008,8 +3392,6 @@ function renderDoctorPortalPreservingState() {
                 el.innerHTML = `<i class="fas fa-check-circle"></i> ${labels[i]}`;
             }
         });
-        const btn = document.getElementById('showResultsBtn');
-        if (btn) btn.style.display = 'inline-flex';
     }
 
     if (step === 4) displayResults();
@@ -3029,7 +3411,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Escape') {
             closeAuthModal();
-            closeAlertModal();
+            closeConfirmModal();
             closeProfileModal();
             closeEditPatientModal();
         }
@@ -3038,9 +3420,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const authModal = document.getElementById('authModal');
     if (authModal) authModal.addEventListener('click', function(e) { if (e.target === this) closeAuthModal(); });
 
-    const alertModal = document.getElementById('alertModal');
-    if (alertModal) alertModal.addEventListener('click', function(e) { if (e.target === this) closeAlertModal(); });
+    const confirmModal = document.getElementById('confirmModal');
+    if (confirmModal) confirmModal.addEventListener('click', function(e) { if (e.target === this) closeConfirmModal(); });
 
     navigateTo('home');
-    console.log('GlaucoIA App V9 cargada');
+    console.log('GlaucoIA App cargada');
 });
